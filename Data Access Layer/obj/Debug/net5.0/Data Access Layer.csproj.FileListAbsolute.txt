@@ -1,0 +1,30 @@
+D:\My Visual Studio proj\LNU Test Portal\Data Access Layer\obj\Debug\net5.0\Data Access Layer.csproj.AssemblyReference.cache
+D:\My Visual Studio proj\LNU Test Portal\Data Access Layer\obj\Debug\net5.0\Data Access Layer.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Visual Studio proj\LNU Test Portal\Data Access Layer\obj\Debug\net5.0\Data Access Layer.AssemblyInfoInputs.cache
+D:\My Visual Studio proj\LNU Test Portal\Data Access Layer\obj\Debug\net5.0\Data Access Layer.AssemblyInfo.cs
+D:\My Visual Studio proj\LNU Test Portal\Data Access Layer\obj\Debug\net5.0\Data Access Layer.csproj.CoreCompileInputs.cache
+D:\My Visual Studio proj\LNU Test Portal\Data Access Layer\bin\Debug\net5.0\Data Access Layer.deps.json
+D:\My Visual Studio proj\LNU Test Portal\Data Access Layer\bin\Debug\net5.0\Data Access Layer.runtimeconfig.json
+D:\My Visual Studio proj\LNU Test Portal\Data Access Layer\bin\Debug\net5.0\Data Access Layer.runtimeconfig.dev.json
+D:\My Visual Studio proj\LNU Test Portal\Data Access Layer\bin\Debug\net5.0\Data Access Layer.dll
+D:\My Visual Studio proj\LNU Test Portal\Data Access Layer\bin\Debug\net5.0\ref\Data Access Layer.dll
+D:\My Visual Studio proj\LNU Test Portal\Data Access Layer\bin\Debug\net5.0\Data Access Layer.pdb
+D:\My Visual Studio proj\LNU Test Portal\Data Access Layer\obj\Debug\net5.0\Data Access Layer.dll
+D:\My Visual Studio proj\LNU Test Portal\Data Access Layer\obj\Debug\net5.0\ref\Data Access Layer.dll
+D:\My Visual Studio proj\LNU Test Portal\Data Access Layer\obj\Debug\net5.0\Data Access Layer.pdb
+D:\My Visual Studio proj\LNU Test Portal\Data Access Layer\obj\Debug\net5.0\Data Access Layer.genruntimeconfig.cache
+D:\My Visual Studio proj\MyShelter\Data Access Layer\obj\Debug\net5.0\Data Access Layer.csproj.AssemblyReference.cache
+D:\My Visual Studio proj\MyShelter\Data Access Layer\obj\Debug\net5.0\Data Access Layer.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Visual Studio proj\MyShelter\Data Access Layer\obj\Debug\net5.0\Data Access Layer.AssemblyInfoInputs.cache
+D:\My Visual Studio proj\MyShelter\Data Access Layer\obj\Debug\net5.0\Data Access Layer.AssemblyInfo.cs
+D:\My Visual Studio proj\MyShelter\Data Access Layer\obj\Debug\net5.0\Data Access Layer.csproj.CoreCompileInputs.cache
+D:\My Visual Studio proj\MyShelter\Data Access Layer\obj\Debug\net5.0\Data Access Layer.dll
+D:\My Visual Studio proj\MyShelter\Data Access Layer\obj\Debug\net5.0\ref\Data Access Layer.dll
+D:\My Visual Studio proj\MyShelter\Data Access Layer\obj\Debug\net5.0\Data Access Layer.pdb
+D:\My Visual Studio proj\MyShelter\Data Access Layer\bin\Debug\net5.0\Data Access Layer.deps.json
+D:\My Visual Studio proj\MyShelter\Data Access Layer\bin\Debug\net5.0\Data Access Layer.runtimeconfig.json
+D:\My Visual Studio proj\MyShelter\Data Access Layer\bin\Debug\net5.0\Data Access Layer.runtimeconfig.dev.json
+D:\My Visual Studio proj\MyShelter\Data Access Layer\bin\Debug\net5.0\Data Access Layer.dll
+D:\My Visual Studio proj\MyShelter\Data Access Layer\bin\Debug\net5.0\ref\Data Access Layer.dll
+D:\My Visual Studio proj\MyShelter\Data Access Layer\bin\Debug\net5.0\Data Access Layer.pdb
+D:\My Visual Studio proj\MyShelter\Data Access Layer\obj\Debug\net5.0\Data Access Layer.genruntimeconfig.cache
