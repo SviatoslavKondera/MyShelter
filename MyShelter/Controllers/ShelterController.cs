@@ -29,9 +29,23 @@ namespace MyShelter.Controllers
         
         public IActionResult GetAllShelters()
         {
-            //var shelters = shelterService.GetAllShelters();
+            var shelters = shelterService.GetAllShelters();
             logger.LogInformation("Show all shelters");
-            return View();
+            return View(shelters);
+        }
+
+        public IActionResult CreateShelter()
+        {
+            var model = new Shelter();
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult CreateShelter([Bind("ShelterName,City,Street,PeopleCount,ShelterShortDescription")] Shelter shelter)
+        {
+            shelterService.AddNewShelter(shelter);
+            return RedirectToAction(nameof(GetAllShelters));
         }
 
     }

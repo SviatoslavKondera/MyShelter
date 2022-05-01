@@ -1,0 +1,66 @@
+﻿@model Data_Access_Layer.Entities.Shelter
+@{
+    ViewData["Title"] = "Create Shelter";
+    Layout = "_Layout";
+
+}
+
+
+
+<div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                <div class="CreateCourseForm card"  style="border-radius: 15px;">
+                    <div class="card-body p-5">
+                        <h2 class="text-uppercase text-center text-white mb-4">Add Your Own Shelter</h2>
+
+                        <form method="post" asp-controller="Shelter" asp-action="CreateShelter">
+                            @Html.AntiForgeryToken()
+                            <div class="form-outline mb-2">
+                                <label class="form-label text-white" for="form3Example1cg">Shelter Name</label>
+                                <input type="text" id="form3Example1cg" class="form-control form-control-lg" asp-for="ShelterName" />
+                            </div>
+                           
+                             <div class="form-row ">
+    <div class="col">
+        <label class="form-label text-white" for="form3Example1cg">City</label>
+      <input type="text" class="form-control" asp-for="City">
+    </div>
+    <div class="col">
+        <label class="form-label text-white" for="form3Example1cg">Street</label>
+      <input type="text" class="form-control" asp-for="Street">
+    </div>
+  </div>
+
+                            <div class="form-outline mb-2">
+                                <label class="form-label text-white" for="form3Example1cg">People Count</label>
+                                <input type="text" id="form3Example1cg" class="form-control form-control-lg" asp-for="PeopleCount" />
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label text-white" for="exampleFormControlTextarea1">Description</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" asp-for="ShelterShortDescription"></textarea>
+                            </div>
+                             <div class="form-group">
+                                <label class="form-label text-white" for="exampleFormControlTextarea1">Choose an Image</label>
+                                                                             <div class="form-group">
+    <input type="file" class="form-control-file" id="exampleFormControlFile1" asp-for="Image">
+  </div>
+                            </div>
+
+     
+
+                            <div class="d-flex justify-content-end">
+                                <a class="CancelButton text-white" asp-area="" asp-controller="Shelter" asp-action="GetAllShelters">Cancel</a>
+                                <input type="submit" class="SaveCourseButton btn text-white" name="save" value="Save" />
+                            </div>
+      
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

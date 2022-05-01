@@ -4,6 +4,134 @@ for details on configuring this project to bundle and minify static web assets. 
 
 
 
+.LocationName {
+    color: #0071c2;
+}
+
+.ShelterFirstSqImg {
+    width: 25%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    margin-top: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom:16px;
+    border-radius: 2px;
+}
+.BtnDetails {
+    margin-top: 15px;
+    padding-top: 10px;
+    margin-right:13px;
+}
+
+
+
+.CancelButton {
+    background-color: #4b4b4b;
+    border-radius: 10px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px 17px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627;
+}
+
+.SaveCourseButton {
+    background-color: #4b4b4b;
+    border-radius: 10px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px 25px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627;
+    margin-left: 12px;
+}
+
+    .SaveCourseButton:hover {
+        text-decoration: underline;
+    }
+
+
+
+
+
+.myButton {
+    background-color: #4b4b4b;
+    border-radius: 10px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px 17px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627;
+}
+
+
+
+
+
+.CoursePageName {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+
+
+
+.CreateCourseForm {
+    background-color: #79819e;
+}
+
+
+
+
+
+
+
+
+
+
+h2.CourseName {
+    margin-top: 15px;
+    padding-top: 10px;
+    font-size: 24px;
+    color: #0071c2;
+    font-family: Arial;
+    font-weight: 700;
+}
+
+p.CourseDescription {
+    margin-top: 10px;
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+
+
+
+
+.courseDetails {
+    height: auto;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    background-color: white;
+    border-color: #c6c6c6;
+    border: 1px solid;
+}
+/////////////////////////
+
+
 .myButton {
     background-color: #4b4b4b;
     border-radius: 10px;
@@ -106,7 +234,8 @@ html {
 
 body {
     /* Margin bottom by footer height */
-    margin-bottom: 60px;
+    margin-bottom: 90px;
+    background-color: #fff;
 }
 
 .footer {

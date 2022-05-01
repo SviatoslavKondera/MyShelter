@@ -1823,20 +1823,20 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Business Logic Layer/1.0.0": {
+      "BLL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Data Access Layer": "1.0.0"
+          "DAL": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Business Logic Layer.dll": {}
+          "bin/placeholder/BLL.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Business Logic Layer.dll": {}
+          "bin/placeholder/BLL.dll": {}
         }
       },
-      "Data Access Layer/1.0.0": {
+      "DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
@@ -1846,10 +1846,10 @@
           "popper.js": "1.16.1"
         },
         "compile": {
-          "bin/placeholder/Data Access Layer.dll": {}
+          "bin/placeholder/DAL.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Data Access Layer.dll": {}
+          "bin/placeholder/DAL.dll": {}
         }
       }
     }
@@ -6742,21 +6742,21 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "Business Logic Layer/1.0.0": {
+    "BLL/1.0.0": {
       "type": "project",
-      "path": "../Business Layer/Business Logic Layer.csproj",
-      "msbuildProject": "../Business Layer/Business Logic Layer.csproj"
+      "path": "../Business Layer/BLL.csproj",
+      "msbuildProject": "../Business Layer/BLL.csproj"
     },
-    "Data Access Layer/1.0.0": {
+    "DAL/1.0.0": {
       "type": "project",
-      "path": "../Data Access Layer/Data Access Layer.csproj",
-      "msbuildProject": "../Data Access Layer/Data Access Layer.csproj"
+      "path": "../Data Access Layer/DAL.csproj",
+      "msbuildProject": "../Data Access Layer/DAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Business Logic Layer >= 1.0.0",
-      "Data Access Layer >= 1.0.0",
+      "BLL >= 1.0.0",
+      "DAL >= 1.0.0",
       "EntityFramework >= 6.4.4",
       "Microsoft.EntityFrameworkCore >= 5.0.16",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.16",
@@ -6793,11 +6793,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\Business Logic Layer.csproj": {
-              "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\Business Logic Layer.csproj"
+            "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\BLL.csproj": {
+              "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\BLL.csproj"
             },
-            "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\Data Access Layer.csproj": {
-              "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\Data Access Layer.csproj"
+            "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\DAL.csproj": {
+              "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\DAL.csproj"
             }
           }
         }

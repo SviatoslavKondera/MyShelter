@@ -4,12 +4,12 @@
     "D:\\My Visual Studio proj\\MyShelter\\MyShelter\\MyShelter.csproj": {}
   },
   "projects": {
-    "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\Business Logic Layer.csproj": {
+    "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\Business Logic Layer.csproj",
-        "projectName": "Business Logic Layer",
-        "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\Business Logic Layer.csproj",
+        "projectUniqueName": "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\BLL.csproj",
+        "projectName": "BLL",
+        "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\BLL.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
         "outputPath": "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\obj\\",
         "projectStyle": "PackageReference",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\Data Access Layer.csproj": {
-                "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\Data Access Layer.csproj"
+              "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\DAL.csproj": {
+                "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\DAL.csproj"
               }
             }
           }
@@ -62,12 +62,12 @@
         }
       }
     },
-    "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\Data Access Layer.csproj": {
+    "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\Data Access Layer.csproj",
-        "projectName": "Data Access Layer",
-        "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\Data Access Layer.csproj",
+        "projectUniqueName": "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\DAL.csproj",
+        "projectName": "DAL",
+        "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\DAL.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
         "outputPath": "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\obj\\",
         "projectStyle": "PackageReference",
@@ -170,11 +170,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\Business Logic Layer.csproj": {
-                "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\Business Logic Layer.csproj"
+              "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\BLL.csproj": {
+                "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\BLL.csproj"
               },
-              "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\Data Access Layer.csproj": {
-                "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\Data Access Layer.csproj"
+              "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\DAL.csproj": {
+                "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\DAL.csproj"
               }
             }
           }

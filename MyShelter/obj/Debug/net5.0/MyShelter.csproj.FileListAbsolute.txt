@@ -60,10 +60,6 @@ D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\runtimes\unix\lib\
 D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\Business Logic Layer.dll
-D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\Data Access Layer.dll
-D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\Business Logic Layer.pdb
-D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\Data Access Layer.pdb
 D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\MyShelter.csproj.AssemblyReference.cache
 D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\MyShelter.GeneratedMSBuildEditorConfig.editorconfig
 D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\MyShelter.AssemblyInfoInputs.cache
@@ -91,3 +87,9 @@ D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\MyShelter.dll
 D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\ref\MyShelter.dll
 D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\MyShelter.pdb
 D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\MyShelter.genruntimeconfig.cache
+D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\BLL.dll
+D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\DAL.dll
+D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\BLL.pdb
+D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\DAL.pdb
+D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\Razor\Views\Shared\_Layout-2.cshtml.g.cs
+D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\Razor\Views\Shelter\CreateShelter.cshtml.g.cs

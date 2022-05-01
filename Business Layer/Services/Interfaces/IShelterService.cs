@@ -10,5 +10,6 @@ namespace Business_Layer.Services.Interfaces
     public interface IShelterService
     {
         IEnumerable<Shelter> GetAllShelters();
+        void AddNewShelter(Shelter shelter);
     }
 }

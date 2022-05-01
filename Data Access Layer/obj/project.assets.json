@@ -6229,9 +6229,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\Data Access Layer.csproj",
-      "projectName": "Data Access Layer",
-      "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\Data Access Layer.csproj",
+      "projectUniqueName": "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\DAl.csproj",
+      "projectName": "DAl",
+      "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\DAl.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\obj\\",
       "projectStyle": "PackageReference",

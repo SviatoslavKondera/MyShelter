@@ -1575,7 +1575,7 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Data Access Layer/1.0.0": {
+      "DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
@@ -1585,10 +1585,10 @@
           "popper.js": "1.16.1"
         },
         "compile": {
-          "bin/placeholder/Data Access Layer.dll": {}
+          "bin/placeholder/DAL.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Data Access Layer.dll": {}
+          "bin/placeholder/DAL.dll": {}
         }
       }
     }
@@ -6135,15 +6135,15 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "Data Access Layer/1.0.0": {
+    "DAL/1.0.0": {
       "type": "project",
-      "path": "../Data Access Layer/Data Access Layer.csproj",
-      "msbuildProject": "../Data Access Layer/Data Access Layer.csproj"
+      "path": "../Data Access Layer/DAL.csproj",
+      "msbuildProject": "../Data Access Layer/DAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Data Access Layer >= 1.0.0"
+      "DAL >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6152,9 +6152,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\Business Logic Layer.csproj",
-      "projectName": "Business Logic Layer",
-      "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\Business Logic Layer.csproj",
+      "projectUniqueName": "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\BLL.csproj",
+      "projectName": "BLL",
+      "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\BLL.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "D:\\My Visual Studio proj\\MyShelter\\Business Layer\\obj\\",
       "projectStyle": "PackageReference",
@@ -6173,8 +6173,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\Data Access Layer.csproj": {
-              "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\Data Access Layer.csproj"
+            "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\DAL.csproj": {
+              "projectPath": "D:\\My Visual Studio proj\\MyShelter\\Data Access Layer\\DAL.csproj"
             }
           }
         }

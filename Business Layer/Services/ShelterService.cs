@@ -12,14 +12,35 @@ namespace Business_Layer.Services
     public class ShelterService : IShelterService
     {
         private readonly IRepository<Shelter> shelterRepository;
-        public ShelterService(IRepository<Shelter> shelterRepository)
+        private readonly IRepository<Category> categoryRepository;
+
+        public ShelterService(IRepository<Shelter> shelterRepository, IRepository<Category> categoryRepository)
         {
             this.shelterRepository = shelterRepository;
+            this.categoryRepository = categoryRepository;
+        }
+
+        public void AddNewShelter(Shelter shelter)
+        {
+            shelterRepository.Insert(shelter);
         }
 
         public IEnumerable<Shelter> GetAllShelters()
         {
-            throw new NotImplementedException();
+            return shelterRepository.SelectAll().Select(x => new Shelter
+            {
+                id = x.id,
+                ShelterName = x.ShelterName,
+                ShelterShortDescription = x.ShelterShortDescription,
+                ShelterLongDescription = x.ShelterLongDescription,
+                Image = x.Image,
+                City = x.City,
+                Street = x.Street,
+                PeopleCount = x.PeopleCount,
+                CategoryId = categoryRepository.SelectOneById(1).id
+
+
+            }) ;
         }
     }
 }

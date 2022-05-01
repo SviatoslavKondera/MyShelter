@@ -55,7 +55,7 @@ namespace MyShelter
                 app.UseHsts();
             }
 
-            //AddData.Initialize(app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope().ServiceProvider);
+            AddData.Initialize(app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope().ServiceProvider);
 
             app.UseStatusCodePages();
             app.UseHttpsRedirection();

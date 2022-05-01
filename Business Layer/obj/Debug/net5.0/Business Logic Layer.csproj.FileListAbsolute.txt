@@ -31,5 +31,4 @@ D:\My Visual Studio proj\MyShelter\Business Layer\bin\Debug\net5.0\ref\Business 
 D:\My Visual Studio proj\MyShelter\Business Layer\bin\Debug\net5.0\Business Logic Layer.pdb
 D:\My Visual Studio proj\MyShelter\Business Layer\bin\Debug\net5.0\Data Access Layer.dll
 D:\My Visual Studio proj\MyShelter\Business Layer\bin\Debug\net5.0\Data Access Layer.pdb
-D:\My Visual Studio proj\MyShelter\Business Layer\obj\Debug\net5.0\Business Logic Layer.csproj.CopyComplete
 D:\My Visual Studio proj\MyShelter\Business Layer\obj\Debug\net5.0\Business Logic Layer.genruntimeconfig.cache

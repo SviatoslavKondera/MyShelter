@@ -11,6 +11,13 @@ namespace Data_Access_Layer
         public DataContext(DbContextOptions options) : base(options) { Database.EnsureCreated(); }
         public DbSet<Shelter> Shelter { get; set; }
         public DbSet<Category> Category { get; set; }
-       
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Shelter>()
+            .HasOne<Category>(s => s.Category)
+            .WithMany(g => g.Shelters)
+            .HasForeignKey(s => s.CategoryId);
+        }
+
     }
 }
