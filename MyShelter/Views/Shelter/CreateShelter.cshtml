@@ -2,8 +2,11 @@
 @{
     ViewData["Title"] = "Create Shelter";
     Layout = "_Layout";
+    IEnumerable<Category> categAv = ViewData["AvailebleCategories"] as System.Collections.Generic.IEnumerable<Category>;
 
 }
+@using Data_Access_Layer.Entities
+
 
 
 
@@ -20,6 +23,18 @@
                             <div class="form-outline mb-2">
                                 <label class="form-label text-white" for="form3Example1cg">Shelter Name</label>
                                 <input type="text" id="form3Example1cg" class="form-control form-control-lg" asp-for="ShelterName" />
+                            </div>
+                            <div class="form-outline mb-2">
+                                <label class="form-label text-white" for="form3Example1cg">Shelter Categry</label>
+                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" asp-for="CategoryId">
+                                    <option selected>Choose Category...</option>
+                                    @foreach(Category category in categAv)
+                                    { 
+                                        <option value="@category.id" asp-for="CategoryId">@category.Name</option>
+                                        
+                                    }
+                            </select>
+
                             </div>
                            
                              <div class="form-row ">

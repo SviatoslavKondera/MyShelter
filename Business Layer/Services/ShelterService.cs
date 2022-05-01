@@ -37,9 +37,9 @@ namespace Business_Layer.Services
                 City = x.City,
                 Street = x.Street,
                 PeopleCount = x.PeopleCount,
-                CategoryId = categoryRepository.SelectOneById(1).id
-
-
+                CategoryId = categoryRepository.SelectOneById(x.CategoryId).id,
+                Category = categoryRepository.SelectOneById(x.CategoryId)
+                
             }) ;
         }
     }

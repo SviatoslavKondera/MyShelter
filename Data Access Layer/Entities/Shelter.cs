@@ -17,7 +17,7 @@ namespace Data_Access_Layer.Entities
         public string City { get; set; }
         public string Street { get; set; }
         public int PeopleCount { get; set; }
-        public virtual Category Category { get; set; }
+        public Category Category { get; set; }
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
     }

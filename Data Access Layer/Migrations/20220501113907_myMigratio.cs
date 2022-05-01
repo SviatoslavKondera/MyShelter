@@ -2,7 +2,7 @@
 
 namespace Data_Access_Layer.Migrations
 {
-    public partial class myMigration2 : Migration
+    public partial class myMigratio : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -19,31 +19,34 @@ namespace MyShelter.Controllers
         private readonly ILogger<ShelterController> logger;
         private readonly IConfiguration configuration;
         private readonly IShelterService shelterService;
+        private readonly ICategoryService categoryService;
 
-        public ShelterController(ILogger<ShelterController> logger, IConfiguration configuration, IShelterService shelterService)
+        public ShelterController(ILogger<ShelterController> logger, IConfiguration configuration, IShelterService shelterService, ICategoryService categoryService)
         {
             this.logger = logger;
             this.configuration = configuration;
             this.shelterService = shelterService;
+            this.categoryService = categoryService;
         }
         
         public IActionResult GetAllShelters()
         {
             var shelters = shelterService.GetAllShelters();
-            logger.LogInformation("Show all shelters");
             return View(shelters);
         }
 
         public IActionResult CreateShelter()
         {
-            var model = new Shelter();
-            return View(model);
+            var shelter = new Shelter();
+            ViewData["AvailebleCategories"] = categoryService.GetAllCategories();
+            return View(shelter);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CreateShelter([Bind("ShelterName,City,Street,PeopleCount,ShelterShortDescription")] Shelter shelter)
+        public IActionResult CreateShelter([Bind("ShelterName,ShelterShortDescription,ShelterLongDescriptionCity,Image,City,Street,PeopleCount,CategoryId")] Shelter shelter)
         {
+            shelter.Category = categoryService.GetCategoryById(shelter.CategoryId);
             shelterService.AddNewShelter(shelter);
             return RedirectToAction(nameof(GetAllShelters));
         }

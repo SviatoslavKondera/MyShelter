@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Data_Access_Layer.Repository
 {
-    public class Repository<T> :IRepository<T> where T :BaseEntity
+    public class Repository<T> : IRepository<T> where T : BaseEntity
     {
         private readonly DbContext dataBaseContext;
         private readonly DbSet<T> entitiesDataSet;
@@ -34,8 +34,8 @@ namespace Data_Access_Layer.Repository
             dataBaseContext.Entry(entity).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
             dataBaseContext.SaveChanges();
         }
-        public T GetModel(T entity)=> entitiesDataSet.Find(entity);
-        public IEnumerable<T> SelectAll()=> entitiesDataSet.ToList();
-        public T SelectOneById(int Id)=> entitiesDataSet.FirstOrDefault(x => x.id == Id);
+        public T GetModel(T entity) => entitiesDataSet.Find(entity);
+        public IEnumerable<T> SelectAll() => entitiesDataSet.ToList();
+        public T SelectOneById(int Id) => entitiesDataSet.FirstOrDefault(x => x.id == Id);
     }
 }

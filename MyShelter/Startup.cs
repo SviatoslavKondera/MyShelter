@@ -31,6 +31,7 @@ namespace MyShelter
             services.AddControllersWithViews();
             services.AddMvc();
             services.AddScoped<IShelterService, ShelterService>();
+            services.AddScoped<ICategoryService, CategoryService>();
             // services.AddScoped<ITestService, ShelterService>();
 
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
@@ -55,7 +56,7 @@ namespace MyShelter
                 app.UseHsts();
             }
 
-            AddData.Initialize(app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope().ServiceProvider);
+           // AddData.Initialize(app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope().ServiceProvider);
 
             app.UseStatusCodePages();
             app.UseHttpsRedirection();
