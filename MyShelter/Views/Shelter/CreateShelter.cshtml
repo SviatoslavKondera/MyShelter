@@ -1,4 +1,4 @@
-﻿@model Data_Access_Layer.Entities.Shelter
+﻿@model ShelterViewModel
 @{
     ViewData["Title"] = "Create Shelter";
     Layout = "_Layout";
@@ -6,6 +6,9 @@
 
 }
 @using Data_Access_Layer.Entities
+@using MyShelter.ViewModels
+
+
 
 
 
@@ -18,7 +21,7 @@
                     <div class="card-body p-5">
                         <h2 class="text-uppercase text-center text-white mb-4">Add Your Own Shelter</h2>
 
-                        <form method="post" asp-controller="Shelter" asp-action="CreateShelter">
+                        <form enctype="multipart/form-data" method="post" asp-controller="Shelter" asp-action="CreateShelter">
                             @Html.AntiForgeryToken()
                             <div class="form-outline mb-2">
                                 <label class="form-label text-white" for="form3Example1cg">Shelter Name</label>
@@ -57,12 +60,14 @@
                                 <label class="form-label text-white" for="exampleFormControlTextarea1">Description</label>
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" asp-for="ShelterShortDescription"></textarea>
                             </div>
-                             <div class="form-group">
-                                <label class="form-label text-white" for="exampleFormControlTextarea1">Choose an Image</label>
-                                                                             <div class="form-group">
-    <input type="file" class="form-control-file" id="exampleFormControlFile1" asp-for="Image">
-  </div>
+                            <div class="form-group">
+                             
+      
+                                <label class="form-label" for="customFile">Default file input example</label>
+                                <input type="file" class="form-control" id="customFile"  asp-for="Image"/>
+                               
                             </div>
+                            
 
      
 

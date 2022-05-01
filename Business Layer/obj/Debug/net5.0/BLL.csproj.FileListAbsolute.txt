@@ -15,4 +15,3 @@ D:\My Visual Studio proj\MyShelter\Business Layer\obj\Debug\net5.0\BLL.dll
 D:\My Visual Studio proj\MyShelter\Business Layer\obj\Debug\net5.0\ref\BLL.dll
 D:\My Visual Studio proj\MyShelter\Business Layer\obj\Debug\net5.0\BLL.pdb
 D:\My Visual Studio proj\MyShelter\Business Layer\obj\Debug\net5.0\BLL.genruntimeconfig.cache
-D:\My Visual Studio proj\MyShelter\Business Layer\obj\Debug\net5.0\BLL.csproj.CopyComplete

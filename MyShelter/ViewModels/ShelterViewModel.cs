@@ -6,20 +6,19 @@ using Data_Access_Layer.Entities;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Http;
 
-namespace Data_Access_Layer.Entities
+namespace MyShelter.ViewModels
 {
-    public class Shelter : BaseEntity
+    public class ShelterViewModel 
     {
-        
+
         public string ShelterName { get; set; }
         public string ShelterShortDescription { get; set; }
         public string ShelterLongDescription { get; set; }
-        public string Image { get; set; }
+        public IFormFile Image { get; set; }
         public string City { get; set; }
         public string Street { get; set; }
         public int PeopleCount { get; set; }
         public Category Category { get; set; }
-        [ForeignKey("Category")]
         public int CategoryId { get; set; }
     }
 }

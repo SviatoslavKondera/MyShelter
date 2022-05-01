@@ -11,22 +11,30 @@ using System.Data.SqlClient;
 using Business_Layer.Services;
 using Business_Layer.Services.Interfaces;
 using Data_Access_Layer.Entities;
+using System.IO;
+using System.Web;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using MyShelter.ViewModels;
+using Microsoft.Extensions.Hosting.Internal;
 
 namespace MyShelter.Controllers
 {
     public class ShelterController : Controller
     {
         private readonly ILogger<ShelterController> logger;
+        private readonly IHostingEnvironment hostingEnvironment;
         private readonly IConfiguration configuration;
         private readonly IShelterService shelterService;
         private readonly ICategoryService categoryService;
 
-        public ShelterController(ILogger<ShelterController> logger, IConfiguration configuration, IShelterService shelterService, ICategoryService categoryService)
+        public ShelterController(ILogger<ShelterController> logger, IHostingEnvironment hostingEnvironment, IConfiguration configuration, IShelterService shelterService, ICategoryService categoryService)
         {
             this.logger = logger;
             this.configuration = configuration;
             this.shelterService = shelterService;
             this.categoryService = categoryService;
+            this.hostingEnvironment = hostingEnvironment;
         }
         
         public IActionResult GetAllShelters()
@@ -37,19 +45,48 @@ namespace MyShelter.Controllers
 
         public IActionResult CreateShelter()
         {
-            var shelter = new Shelter();
             ViewData["AvailebleCategories"] = categoryService.GetAllCategories();
-            return View(shelter);
+            return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CreateShelter([Bind("ShelterName,ShelterShortDescription,ShelterLongDescriptionCity,Image,City,Street,PeopleCount,CategoryId")] Shelter shelter)
+        public IActionResult CreateShelter(ShelterViewModel model)
         {
-            shelter.Category = categoryService.GetCategoryById(shelter.CategoryId);
-            shelterService.AddNewShelter(shelter);
+
+            if (ModelState.IsValid)
+            {
+                string uniqueFileName = null;
+
+                if (model.Image != null)
+                { 
+                    string uploadsFolder = Path.Combine(hostingEnvironment.WebRootPath, "Images");
+                    uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Image.FileName;
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                    model.Image.CopyTo(new FileStream(filePath, FileMode.Create));
+                }
+
+                Shelter newShelter = new Shelter
+                {
+                    ShelterName = model.ShelterName,
+                    ShelterShortDescription = model.ShelterShortDescription,
+                    ShelterLongDescription = model.ShelterLongDescription,
+                    Image = uniqueFileName,
+                    City = model.City,
+                    Street = model.Street,
+                    PeopleCount = model.PeopleCount,
+                    CategoryId = model.CategoryId,
+                    Category = categoryService.GetCategoryById(model.CategoryId)
+
+                };
+
+                shelterService.AddNewShelter(newShelter);
+            }
+
             return RedirectToAction(nameof(GetAllShelters));
         }
+
+        
 
     }
 }
