@@ -86,7 +86,118 @@ namespace MyShelter.Controllers
             return RedirectToAction(nameof(GetAllShelters));
         }
 
-        
+
+        public IActionResult EditShelter(int Id)
+        {
+            try
+            {
+                Shelter shelter = shelterService.GetShelterById(Id);
+                ShelterEditViewModel newShelterViewModel = new ShelterEditViewModel
+                {
+                    Id = shelter.id,
+                    ShelterName = shelter.ShelterName,
+                    ShelterShortDescription = shelter.ShelterShortDescription,
+                    ShelterLongDescription = shelter.ShelterLongDescription,
+                    City = shelter.City,
+                    Street = shelter.Street,
+                    PeopleCount = shelter.PeopleCount,
+                    CategoryId = shelter.CategoryId,
+                    Category = categoryService.GetCategoryById(shelter.CategoryId),
+                    ExistingImage = shelter.Image 
+                };
+
+                ViewData["AvailebleCategories"] = categoryService.GetAllCategories();
+                return View(newShelterViewModel);
+            }
+            catch
+            {
+                return RedirectToAction(nameof(GetAllShelters));
+            }
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditShelter(ShelterEditViewModel model)
+        {
+
+            if (ModelState.IsValid)
+            {
+                Shelter shelt = shelterService.GetShelterById(model.Id);
+                shelt.ShelterName = model.ShelterName;
+                shelt.ShelterShortDescription = model.ShelterShortDescription;
+                shelt.ShelterLongDescription = model.ShelterLongDescription;
+                shelt.City = model.City;
+                shelt.Street = model.Street;
+                shelt.PeopleCount = model.PeopleCount;
+                shelt.CategoryId = model.CategoryId;
+                shelt.Category = model.Category;
+
+                if (model.Image != null)
+                {
+                  
+                    if (model.ExistingImage != null)
+                    {
+                        string filePath = Path.Combine(hostingEnvironment.WebRootPath,
+                            "images", model.ExistingImage);
+                        System.IO.File.Delete(filePath);
+                    }
+
+                    string uniqueFileName = null;
+
+                    if (model.Image != null)
+                    {
+                        string uploadsFolder = Path.Combine(hostingEnvironment.WebRootPath, "Images");
+                        uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Image.FileName;
+                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            model.Image.CopyTo(fileStream);
+                        }
+                    }
+                    shelt.Image = uniqueFileName;
+                }
+
+                shelterService.Update(shelt);
+                
+            }
+
+            return RedirectToAction(nameof(GetAllShelters));
+        }
+
+        public IActionResult DeleteShelter(int Id)
+        {
+            try
+            {
+                Shelter shelter = shelterService.GetShelterById(Id);
+                return View(shelter);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction(nameof(GetAllShelters));
+            }
+        }
+
+        [HttpPost, ActionName("DeleteShelter")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(int Id)
+        {
+            try
+            {
+                Shelter shelter = shelterService.GetShelterById(Id);
+                var ImgPath = Path.Combine(hostingEnvironment.WebRootPath, "Image", shelter.Image);
+                if (System.IO.File.Exists(ImgPath))
+                    System.IO.File.Delete(ImgPath);
+                shelterService.DeleteShelter(shelter);
+                return RedirectToAction(nameof(GetAllShelters));
+            }
+            catch (Exception)
+            {
+                return RedirectToAction(nameof(GetAllShelters));
+            }
+        }
+
+
 
     }
 }

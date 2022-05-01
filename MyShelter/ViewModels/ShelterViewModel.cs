@@ -10,7 +10,6 @@ namespace MyShelter.ViewModels
 {
     public class ShelterViewModel 
     {
-
         public string ShelterName { get; set; }
         public string ShelterShortDescription { get; set; }
         public string ShelterLongDescription { get; set; }

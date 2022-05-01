@@ -8,30 +8,30 @@
 
 
 <div class="manage course content">
-    <a class="myButton text-white" asp-controller="Shelter" asp-action="CreateShelter">Create Shelter</a>
+    <a class="btn btn-primary text-white" asp-controller="Shelter" asp-action="CreateShelter">Create Shelter</a>
     @{
         int num = 0;
-        foreach(var course in Model)
+        foreach(var shelter in Model)
         {
             num++;
  
 <div class="courseDetails d-flex flex-row" style="width:74%">
-    <img class="ShelterFirstSqImg" src="~/images/@course.Image" />
+    <img class="ShelterFirstSqImg" src="~/Images/@shelter.Image" />
     <div class="d-flex flex-column">
-  <div class="p-0"><h2 class="CourseName "><b>@course.ShelterName</b></h2></div>
-  <div class="LocationName p-1">@course.City , @course.Street</div>
-  <div class="p-1">@course.ShelterShortDescription</div>
+  <div class="p-0"><h2 class="CourseName "><b>@shelter.ShelterName</b></h2></div>
+  <div class="LocationName p-1">@shelter.City , @shelter.Street</div>
+  <div class="p-1">@shelter.ShelterShortDescription</div>
 </div>
 <div class="ml-auto p-2">
-<div class="d-flex flex-column justify-content-start" style="width:50%">
+<div class="d-flex flex-column justify-content-start">
 <div class="p-1">
-<a class="btn btn-primary" asp-controller="Shelter" asp-action="Details" role="button">View Details</a>
+<a class="btn btn-primary" asp-controller="Shelter" asp-action="Details" role="button" asp-route-id="@shelter.id" style="width:110%">Details</a>
 </div>
 <div class="p-1">
-<a class="btn btn-primary" asp-controller="Shelter" asp-action="Edit" role="button">Edit</a>
+<a class="btn btn-primary" asp-controller="Shelter" asp-action="EditShelter" role="button" asp-route-id="@shelter.id" style="width:110%">Edit</a>
 </div>
 <div class="p-1">
-<a class="btn btn-primary" asp-controller="Shelter" asp-action="Delete" role="button">Delete</a>
+<a class="btn btn-primary" asp-controller="Shelter" asp-action="DeleteShelter" role="button" asp-route-id="@shelter.id" style="width:110%">Delete</a>
 </div>
 </div>
 </div>

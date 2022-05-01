@@ -26,6 +26,11 @@ namespace Business_Layer.Services
             shelterRepository.Insert(shelter);
         }
 
+        public void DeleteShelter(Shelter shelter)
+        {
+            shelterRepository.Delete(shelter);
+        }
+
         public IEnumerable<Shelter> GetAllShelters()
         {
             return shelterRepository.SelectAll().Select(x => new Shelter
@@ -42,6 +47,16 @@ namespace Business_Layer.Services
                 Category = categoryRepository.SelectOneById(x.CategoryId)
                 
             }) ;
+        }
+
+        public Shelter GetShelterById(int Id)
+        {
+            return shelterRepository.SelectOneById(Id);
+        }
+
+        public void Update(Shelter shelt)
+        {
+            shelterRepository.Update(shelt);
         }
     }
 }

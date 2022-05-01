@@ -11,5 +11,8 @@ namespace Business_Layer.Services.Interfaces
     {
         IEnumerable<Shelter> GetAllShelters();
         void AddNewShelter(Shelter shelter);
+        Shelter GetShelterById(int Id);
+        void Update(Shelter shelt);
+        void DeleteShelter(Shelter shelter);
     }
 }
