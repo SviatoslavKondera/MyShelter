@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using MyShelter.ViewModels;
 using Microsoft.Extensions.Hosting.Internal;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MyShelter.Controllers
 {
@@ -37,6 +38,7 @@ namespace MyShelter.Controllers
             this.hostingEnvironment = hostingEnvironment;
         }
         
+        [AllowAnonymous]
         public IActionResult GetAllShelters()
         {
             var shelters = shelterService.GetAllShelters();
@@ -117,6 +119,7 @@ namespace MyShelter.Controllers
         }
 
         [HttpPost]
+       
         [ValidateAntiForgeryToken]
         public IActionResult EditShelter(ShelterEditViewModel model)
         {

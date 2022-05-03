@@ -19,8 +19,15 @@ using MyShelter;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "D:\My Visual Studio proj\MyShelter\MyShelter\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d696127c4b499f2c0b70feb88c40796887b0b5a9", @"/Views/Shelter/GetAllShelters.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cfd63e65ae3a1a8aea299935a459868d2e37df9f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"277f71284e154e47232a2fd030ac35a674ee330f", @"/Views/_ViewImports.cshtml")]
     public class Views_Shelter_GetAllShelters : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Data_Access_Layer.Entities.Shelter>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-primary text-white"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -69,7 +76,7 @@ using MyShelter;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n\r\n\r\n<div class=\"manage course content\">\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d696127c4b499f2c0b70feb88c40796887b0b5a96699", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d696127c4b499f2c0b70feb88c40796887b0b5a96888", async() => {
                 WriteLiteral("Create Shelter");
             }
             );
@@ -101,7 +108,7 @@ using MyShelter;
 #line hidden
 #nullable disable
             WriteLiteral("<div class=\"courseDetails d-flex flex-row\" style=\"width:74%\">\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d696127c4b499f2c0b70feb88c40796887b0b5a98520", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d696127c4b499f2c0b70feb88c40796887b0b5a98709", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -157,7 +164,7 @@ AddHtmlAttributeValue("", 499, shelter.Image, 499, 14, false);
 #line hidden
 #nullable disable
             WriteLiteral("</div>\r\n</div>\r\n<div class=\"ml-auto p-2\">\r\n<div class=\"d-flex flex-column justify-content-start\">\r\n<div class=\"p-1\">\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d696127c4b499f2c0b70feb88c40796887b0b5a911408", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d696127c4b499f2c0b70feb88c40796887b0b5a911597", async() => {
                 WriteLiteral("Details");
             }
             );
@@ -193,7 +200,7 @@ AddHtmlAttributeValue("", 499, shelter.Image, 499, 14, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n</div>\r\n<div class=\"p-1\">\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d696127c4b499f2c0b70feb88c40796887b0b5a914101", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d696127c4b499f2c0b70feb88c40796887b0b5a914290", async() => {
                 WriteLiteral("Edit");
             }
             );
@@ -229,7 +236,7 @@ AddHtmlAttributeValue("", 499, shelter.Image, 499, 14, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n</div>\r\n<div class=\"p-1\">\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d696127c4b499f2c0b70feb88c40796887b0b5a916795", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d696127c4b499f2c0b70feb88c40796887b0b5a916984", async() => {
                 WriteLiteral("Delete");
             }
             );

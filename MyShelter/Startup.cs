@@ -15,6 +15,8 @@ using Data_Access_Layer.Repository;
 using Data_Access_Layer.Entities;
 using Data_Access_Layer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace MyShelter
 {
@@ -30,7 +32,17 @@ namespace MyShelter
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            //services.AddMvc(config => {
+            //    var policy = new AuthorizationPolicyBuilder()
+            //                    .RequireAuthenticatedUser()
+            //                    .Build();
+            //    config.Filters.Add(new AuthorizeFilter(policy));
+            //});
+
             services.AddMvc();
+
+
             services.AddScoped<IShelterService, ShelterService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddIdentity<IdentityUser, IdentityRole>()

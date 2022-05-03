@@ -20,6 +20,13 @@ using MyShelter;
 #line hidden
 #nullable disable
 #nullable restore
+#line 3 "D:\My Visual Studio proj\MyShelter\MyShelter\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 6 "D:\My Visual Studio proj\MyShelter\MyShelter\Views\Shelter\DeleteShelter.cshtml"
 using Data_Access_Layer.Entities;
 
@@ -34,7 +41,7 @@ using MyShelter.ViewModels;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"67145ea19e2c37d6a90c15b6385a03a3d01d5233", @"/Views/Shelter/DeleteShelter.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cfd63e65ae3a1a8aea299935a459868d2e37df9f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"277f71284e154e47232a2fd030ac35a674ee330f", @"/Views/_ViewImports.cshtml")]
     public class Views_Shelter_DeleteShelter : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Shelter>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("type", "hidden", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -97,7 +104,7 @@ var photoPath = "/Images/"+Model.Image;
                         <h2 class=""text-uppercase text-center text-white mb-4"">Delete Shelter</h2>
 
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "67145ea19e2c37d6a90c15b6385a03a3d01d52338049", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "67145ea19e2c37d6a90c15b6385a03a3d01d52338238", async() => {
                 WriteLiteral("\r\n                            ");
 #nullable restore
 #line 20 "D:\My Visual Studio proj\MyShelter\MyShelter\Views\Shelter\DeleteShelter.cshtml"
@@ -107,7 +114,7 @@ var photoPath = "/Images/"+Model.Image;
 #line hidden
 #nullable disable
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "67145ea19e2c37d6a90c15b6385a03a3d01d52338619", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "67145ea19e2c37d6a90c15b6385a03a3d01d52338808", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -130,7 +137,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            <div class=\"form-outline mb-2\">\r\n                                <label class=\"form-label text-white\" for=\"form3Example1cg\">Shelter Name</label>\r\n                                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "67145ea19e2c37d6a90c15b6385a03a3d01d523310532", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "67145ea19e2c37d6a90c15b6385a03a3d01d523310721", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -168,7 +175,7 @@ WriteAttributeValue("", 1399, photoPath, 1399, 10, false);
 #nullable disable
                 EndWriteAttribute();
                 WriteLiteral(" width=\"100%\" object-fit=\"cover\" aspect-ratio =\"1/1\">\r\n                            </div>\r\n\r\n                            <div class=\"d-flex justify-content-end\">\r\n                                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "67145ea19e2c37d6a90c15b6385a03a3d01d523313474", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "67145ea19e2c37d6a90c15b6385a03a3d01d523313663", async() => {
                     WriteLiteral("Cancel");
                 }
                 );
