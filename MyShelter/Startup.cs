@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using Data_Access_Layer.Repository;
 using Data_Access_Layer.Entities;
 using Data_Access_Layer;
+using Microsoft.AspNetCore.Identity;
 
 namespace MyShelter
 {
@@ -32,6 +33,8 @@ namespace MyShelter
             services.AddMvc();
             services.AddScoped<IShelterService, ShelterService>();
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddIdentity<IdentityUser, IdentityRole>()
+        .AddEntityFrameworkStores<DataContext>();
             // services.AddScoped<ITestService, ShelterService>();
 
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
@@ -65,6 +68,7 @@ namespace MyShelter
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
