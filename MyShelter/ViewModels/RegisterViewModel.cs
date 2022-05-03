@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using Data_Access_Layer.Entities;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Http;
+using MyShelter.Utilites;
 
 namespace MyShelter.ViewModels
 {
@@ -12,6 +13,8 @@ namespace MyShelter.ViewModels
     {
         [Required]
         [EmailAddress]
+        [ValidEmailDomain(allowedDomain: "gmail.com",
+        ErrorMessage = "Email domain must be gmail.com")]
         public string Email { get; set; }
 
         [Required]
