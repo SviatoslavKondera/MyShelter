@@ -90,7 +90,7 @@ for details on configuring this project to bundle and minify static web assets. 
 
 
 .CreateCourseForm {
-    background-color: #79819e;
+    background-color: #0e6ccd;
 }
 
 
@@ -127,7 +127,7 @@ p.CourseDescription {
     margin-bottom: 12px;
     background-color: white;
     border-color: #c6c6c6;
-    border: 1px solid;
+    border: 3px solid;
 }
 /////////////////////////
 
@@ -155,7 +155,7 @@ p.CourseDescription {
 
 
 header {
-    background-color: #003580;
+    background-color: #0e6ccd;
 }
 
 a.Usname {
@@ -239,7 +239,7 @@ body {
 }
 
 .footer {
-    background-color: #003580;
+    background-color: #0e6ccd;
     position: absolute;
     bottom: 0;
     width: 100%;

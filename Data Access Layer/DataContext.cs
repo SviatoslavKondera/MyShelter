@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Data_Access_Layer
 {
-    public class DataContext : IdentityDbContext
+    public class DataContext : IdentityDbContext<ApplicationUser>
     {
         public DataContext(DbContextOptions options) : base(options) { Database.EnsureCreated(); }
         public DbSet<Shelter> Shelter { get; set; }

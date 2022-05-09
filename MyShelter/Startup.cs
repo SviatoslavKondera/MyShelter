@@ -45,7 +45,7 @@ namespace MyShelter
 
             services.AddScoped<IShelterService, ShelterService>();
             services.AddScoped<ICategoryService, CategoryService>();
-            services.AddIdentity<IdentityUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>()
         .AddEntityFrameworkStores<DataContext>();
             // services.AddScoped<ITestService, ShelterService>();
 
@@ -79,8 +79,10 @@ namespace MyShelter
 
             app.UseRouting();
 
-            app.UseAuthorization();
+
             app.UseAuthentication();
+            app.UseAuthorization();
+            
 
             app.UseEndpoints(endpoints =>
             {

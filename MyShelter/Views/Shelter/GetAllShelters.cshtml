@@ -8,14 +8,14 @@
 
 
 <div class="manage course content">
-    <a class="btn btn-primary text-white" asp-controller="Shelter" asp-action="CreateShelter">Create Shelter</a>
+    <a class="btn btn-primary text-white" asp-controller="Shelter" asp-action="CreateShelter">Create Facility</a>
     @{
         int num = 0;
         foreach(var shelter in Model)
         {
             num++;
  
-<div class="courseDetails d-flex flex-row" style="width:74%">
+<div class="courseDetails d-flex flex-row" style="width:74%;border-width:1px;">
     <img class="ShelterFirstSqImg" src="~/Images/@shelter.Image" />
     <div class="d-flex flex-column">
   <div class="p-0"><h2 class="CourseName "><b>@shelter.ShelterName</b></h2></div>
