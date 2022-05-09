@@ -18,11 +18,26 @@ namespace Business_Layer.Services
             this.categoryRepository = categoryRepository;
         }
 
+        public void AddNewCategory(Category category)
+        {
+            categoryRepository.Insert(category);
+        }
+
+        public void DeleteCategory(Category category)
+        {
+            categoryRepository.Delete(category);
+        }
+
         public IEnumerable<Category> GetAllCategories()
         {
             return categoryRepository.SelectAll().
                 Select(x => new Category { id = x.id, Description = x.Description, Name = x.Name });
         }
         public Category GetCategoryById(int Id) => categoryRepository.SelectOneById(Id);
+
+        public void UpdateCategory(Category category)
+        {
+            categoryRepository.Update(category);
+        }
     }
 }

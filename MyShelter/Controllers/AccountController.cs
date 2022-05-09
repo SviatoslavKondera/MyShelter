@@ -88,7 +88,7 @@ namespace MyShelter.Controllers
                     {
                         await roleManager.CreateAsync(new IdentityRole("Admin"));//create role
                     }
-                    await userManager.AddToRoleAsync(user, "SimpleUser");
+                    await userManager.AddToRoleAsync(user, "SimpleUser");// default role
                     await signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("GetAllShelters", "Shelter");
                 }
