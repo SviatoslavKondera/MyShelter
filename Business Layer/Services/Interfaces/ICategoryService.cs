@@ -11,5 +11,8 @@ namespace Business_Layer.Services.Interfaces
     {
         IEnumerable<Category> GetAllCategories();
         Category GetCategoryById(int Id);
+        void AddNewCategory(Category category);
+        void UpdateCategory(Category category);
+        void DeleteCategory(Category category);
     }
 }

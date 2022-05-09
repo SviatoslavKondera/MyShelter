@@ -17,14 +17,14 @@ using Microsoft.AspNetCore.Identity;
 namespace LNU_Test_Portal.Controllers
 {
     [Authorize]
-    public class CourseController : Controller
+    public class CategoryController : Controller
     {
-        private readonly ILogger<CourseController> logger;
+        private readonly ILogger<CategoryController> logger;
         private readonly IConfiguration configuration;
         private readonly ICategoryService categoryService;
         private readonly SignInManager<ApplicationUser> signInManager;
 
-        public CourseController(ILogger<CourseController> logger, IConfiguration configuration, ICategoryService categoryService, SignInManager<ApplicationUser> signInManager)
+        public CategoryController(ILogger<CategoryController> logger, IConfiguration configuration, ICategoryService categoryService, SignInManager<ApplicationUser> signInManager)
         {
             this.logger = logger;
             this.configuration = configuration;

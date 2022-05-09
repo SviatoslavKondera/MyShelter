@@ -1,0 +1,39 @@
+﻿@using Data_Access_Layer.Entities
+@using Microsoft.AspNetCore.Identity
+
+@model IEnumerable<Data_Access_Layer.Entities.Category>
+@inject SignInManager<ApplicationUser> signInMahager;
+@{
+    ViewData["Title"] = "Manage Courses";
+    Layout = "_Layout";
+
+}
+
+
+<div class="manage course content">
+  
+    
+     <a class="btn btn-primary text-white" asp-controller="Category" asp-action="Create">Create Category</a>
+    @{
+        int num = 0;
+        foreach(var Category in Model)
+        {
+            num++;
+ 
+<div class="courseDetails2 flex-column justify-content-between" style="width:75%">
+    <div class="d-flex justify-content-between">
+        <h2 class="CourseName text-blue" style="padding-left:23px;"><b>Category #@num : @Category.name</b></h2>
+        <a href="#" class="AddStudentBtn text-white">Add student</a>
+    </div>
+    <p class="CourseDescription text-blue" style="width:68%"> @Category.description</p>
+   
+                    <div class="d-flex align-items-start">
+        <a class="btn btn-primary text-white" asp-controller="Category" asp-action="Edit" asp-route-id="@Category.id" style="margin-left:23px;">Edit</a>
+        <a class="btn btn-primary text-white" asp-controller="Category" asp-action="Delete" asp-route-id="@Category.id" style="margin-left:15px;">Delete</a>
+    </div>
+                
+    
+</div>
+        }
+    }
+</div>

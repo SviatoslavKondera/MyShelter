@@ -91,7 +91,6 @@ D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\BLL.dll
 D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\DAL.dll
 D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\BLL.pdb
 D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\DAL.pdb
-D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\Razor\Views\Shared\_Layout-2.cshtml.g.cs
 D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\Razor\Views\Shelter\CreateShelter.cshtml.g.cs
 D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\Microsoft.AspNetCore.Server.Kestrel.Https.dll
 D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
@@ -116,3 +115,7 @@ D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\Newtonsoft.Json.Bs
 D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\Owin.dll
 D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
 D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\Razor\Views\Category\Create.cshtml.g.cs
+D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\Razor\Views\Category\Delete.cshtml.g.cs
+D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\Razor\Views\Category\Edit.cshtml.g.cs
+D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\Razor\Views\Category\GetAllCategories.cshtml.g.cs

@@ -35,7 +35,7 @@
                                     <option selected>Choose Category...</option>
                                     @foreach(Category category in categAv)
                                     { 
-                                        <option value="@category.id" asp-for="CategoryId">@category.Name</option>
+                                        <option value="@category.id" asp-for="CategoryId">@category.name</option>
                                         
                                     }
                             </select>

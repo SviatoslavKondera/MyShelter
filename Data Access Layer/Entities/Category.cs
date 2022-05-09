@@ -8,8 +8,8 @@ namespace Data_Access_Layer.Entities
 {
     public class Category : BaseEntity
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public string name { get; set; }
+        public string description { get; set; }
         public virtual IEnumerable<Shelter> Shelters { get; set; }
     }
 }
