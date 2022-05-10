@@ -142,7 +142,7 @@ namespace MyShelter.Controllers
                     if (model.ExistingImage != null)
                     {
                         string filePath = Path.Combine(hostingEnvironment.WebRootPath,
-                            "images", model.ExistingImage);
+                            "Images", model.ExistingImage);
                         System.IO.File.Delete(filePath);
                     }
 
@@ -188,7 +188,7 @@ namespace MyShelter.Controllers
             try
             {
                 Shelter shelter = shelterService.GetShelterById(Id);
-                var ImgPath = Path.Combine(hostingEnvironment.WebRootPath, "Image", shelter.Image);
+                var ImgPath = Path.Combine(hostingEnvironment.WebRootPath, "Images", shelter.Image);
                 if (System.IO.File.Exists(ImgPath))
                     System.IO.File.Delete(ImgPath);
                 shelterService.DeleteShelter(shelter);

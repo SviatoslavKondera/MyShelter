@@ -33,8 +33,4 @@
     <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="wwwroot\Images\image-1.jpg" />
-  </ItemGroup>
-
 </Project>
