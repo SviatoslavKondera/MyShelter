@@ -4,7 +4,7 @@
 @model IEnumerable<Data_Access_Layer.Entities.Category>
 @inject SignInManager<ApplicationUser> signInMahager;
 @{
-    ViewData["Title"] = "Manage Courses";
+    ViewData["Title"] = "Manage Categoty";
     Layout = "_Layout";
 
 }
@@ -23,7 +23,7 @@
 <div class="courseDetails2 flex-column justify-content-between" style="width:75%">
     <div class="d-flex justify-content-between">
         <h2 class="CourseName text-blue" style="padding-left:23px;"><b>Category #@num : @Category.name</b></h2>
-        <a href="#" class="AddStudentBtn text-white">Add student</a>
+        <img class="ShelterFirstSqImg" src="~/Images/@Category.Image" />
     </div>
     <p class="CourseDescription text-blue" style="width:68%"> @Category.description</p>
    

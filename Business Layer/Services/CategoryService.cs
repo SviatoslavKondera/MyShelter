@@ -31,7 +31,7 @@ namespace Business_Layer.Services
         public IEnumerable<Category> GetAllCategories()
         {
             return categoryRepository.SelectAll().
-                Select(x => new Category { id = x.id, description = x.description, name = x.name });
+                Select(x => new Category { id = x.id, description = x.description, name = x.name, Image = x.Image });
         }
         public Category GetCategoryById(int Id) => categoryRepository.SelectOneById(Id);
 
