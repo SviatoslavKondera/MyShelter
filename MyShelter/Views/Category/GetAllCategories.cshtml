@@ -5,7 +5,7 @@
 @inject SignInManager<ApplicationUser> signInMahager;
 @{
     ViewData["Title"] = "Manage Categoty";
-    Layout = "_Layout";
+    Layout = "_Layout-2";
 
 }
 
@@ -16,24 +16,28 @@
      <a class="btn btn-primary text-white" asp-controller="Category" asp-action="Create">Create Category</a>
     @{
         int num = 0;
-        foreach(var Category in Model)
+        foreach(var cat in Model)
         {
             num++;
- 
-<div class="courseDetails2 flex-column justify-content-between" style="width:75%">
-    <div class="d-flex justify-content-between">
-        <h2 class="CourseName text-blue" style="padding-left:23px;"><b>Category #@num : @Category.name</b></h2>
-        <img class="ShelterFirstSqImg" src="~/Images/@Category.Image" />
-    </div>
-    <p class="CourseDescription text-blue" style="width:68%"> @Category.description</p>
-   
-                    <div class="d-flex align-items-start">
-        <a class="btn btn-primary text-white" asp-controller="Category" asp-action="Edit" asp-route-id="@Category.id" style="margin-left:23px;">Edit</a>
-        <a class="btn btn-primary text-white" asp-controller="Category" asp-action="Delete" asp-route-id="@Category.id" style="margin-left:15px;">Delete</a>
-    </div>
-                
-    
+ <div class="courseDetails d-flex flex-row" style="width:74%;border-width:1px;">
+    <img class="ShelterFirstSqImg" src="~/Images/@cat.Image" />
+    <div class="d-flex flex-column"  style="">
+  <div class="p-0"><h2 class="CourseName "><b>@cat.name</b></h2></div>
+  <div class="p-1">@cat.description</div>
+  <div class="d-flex flex-row">
+
+  <div class=" d-flex p-1 align-self-end" style="margin-bottom:12px;">
+      <a class="btn btn-primary text-white" asp-controller="Category" asp-action="Edit" role="button" asp-route-id="@cat.id" style="width:80px;">Edit</a>
+       <a class="btn btn-primary text-white" asp-controller="Category" asp-action="Delete" role="button" asp-route-id="@cat.id"  style="margin-left:10px; width:80px;">Delete</a>
+  </div>
+  
+</div>
+
+</div>
+  
 </div>
         }
     }
+
+    
 </div>
