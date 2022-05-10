@@ -202,5 +202,35 @@ namespace MyShelter.Controllers
 
 
 
+        public IActionResult ShelterDetails(int Id)
+        {
+            try
+            {
+                Shelter shelter = shelterService.GetShelterById(Id);
+                ShelterEditViewModel newShelterViewModel = new ShelterEditViewModel
+                {
+                    Id = shelter.id,
+                    ShelterName = shelter.ShelterName,
+                    ShelterShortDescription = shelter.ShelterShortDescription,
+                    ShelterLongDescription = shelter.ShelterLongDescription,
+                    City = shelter.City,
+                    Street = shelter.Street,
+                    PeopleCount = shelter.PeopleCount,
+                    CategoryId = shelter.CategoryId,
+                    Category = categoryService.GetCategoryById(shelter.CategoryId),
+                    ExistingImage = shelter.Image
+                };
+
+                ViewData["AvailebleCategories"] = categoryService.GetAllCategories();
+                return View(newShelterViewModel);
+            }
+            catch
+            {
+                return RedirectToAction(nameof(GetAllShelters));
+            }
+
+        }
+
+
     }
 }

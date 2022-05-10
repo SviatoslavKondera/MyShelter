@@ -120,3 +120,4 @@ D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\Razor\Views\Catego
 D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\Razor\Views\Category\Edit.cshtml.g.cs
 D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\Razor\Views\Category\GetAllCategories.cshtml.g.cs
 D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\Razor\Views\Shared\_Layout-2.cshtml.g.cs
+D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\Razor\Views\Shelter\ShelterDetails.cshtml.g.cs

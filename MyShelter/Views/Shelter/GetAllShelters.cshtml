@@ -5,7 +5,7 @@
 
 }
 
-<div class="manage course content">
+<div class="manage course content" style="width:74%;">
     <a class="btn btn-primary text-white" asp-controller="Shelter" asp-action="CreateShelter">Create Facility</a>
     @{
         int num = 0;
@@ -13,7 +13,7 @@
         {
             num++;
  
-<div class="courseDetails d-flex flex-row" style="width:74%;border-width:1px;">
+<div class="courseDetails d-flex flex-row" style="border-width:1px;">
     <img class="ShelterFirstSqImg" src="~/Images/@shelter.Image" />
     <div class="d-flex flex-column"  style="">
   <div class="p-0"><h2 class="CourseName "><b>@shelter.ShelterName</b></h2></div>
@@ -24,7 +24,7 @@
   <div class=" d-flex p-1 align-self-end" style="margin-bottom:12px;">
       <a class="btn btn-primary text-white" asp-controller="Shelter" asp-action="EditShelter" role="button" asp-route-id="@shelter.id" style="width:80px;">Edit</a>
        <a class="btn btn-primary text-white" asp-controller="Shelter" asp-action="DeleteShelter" role="button" asp-route-id="@shelter.id"  style="margin-left:10px; width:80px;">Delete</a>
-       <a class="btn btn-primary text-white" asp-controller="Shelter" asp-action="Details" role="button" asp-route-id="@shelter.id"  style="margin-left:10px; width:80px;">Details</a>
+       <a class="btn btn-primary text-white" asp-controller="Shelter" asp-action="ShelterDetails" role="button" asp-route-id="@shelter.id"  style="margin-left:10px; width:80px;">Details</a>
   </div>
   
 </div>
