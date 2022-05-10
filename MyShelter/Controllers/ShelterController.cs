@@ -42,6 +42,8 @@ namespace MyShelter.Controllers
         public IActionResult GetAllShelters()
         {
             var shelters = shelterService.GetAllShelters();
+
+            ViewData["AvailebleCategories"] = categoryService.GetAllCategories();
             return View(shelters);
         }
 

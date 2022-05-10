@@ -15,46 +15,58 @@
 <div class="manage course content align-content-center d-flex justify-content-center">
    
    
-<div class="courseDetails flex-column justify-content-between " style="width:70%;border-width:3px;border-color:#0e6ccd;border-radius: 15px;">
+<div class="courseDetails flex-column justify-content-between " style="width:70%;border-width:3px;border-color:#0e6ccd;border-radius: 15px;padding-left:30px;padding-right:30px;">
     <div class="d-flex justify-content-center  align-content-center">
         <h2 class="ggg" style="text-align:center;color:#0071c2;"><b> @Model.ShelterName</b></h2>
 </div>
 <div class="form-outline mb-2 margin:20px; border:3px;">
-                            <img class="gjpke" src="@photoPath" width="100%" object-fit="cover" aspect-ratio ="1/1" style="padding:25px; padding-top:10px;">
+                            <img class="gjpke" src="@photoPath" width="100%" object-fit="cover" aspect-ratio ="1/1" style=" padding-top:10px;">
                             </div>
 
-                            <div class="form-outline mb-2" style="padding-left:30px;">
+                            <div class="form-outline mb-2" style="">
                                 <p class="DetailsText" for="form3Example1cg" style=""><strong>Category: </strong> @Model.Category.name</p>
                             </div>
-                            <div class="form-outline mb-2" style="padding-left:30px;">
+                            <div class="form-outline mb-2" style="">
                                 <p class="DetailsText" for="form3Example1cg" style=""><strong>Name of facility: </strong> @Model.ShelterName</p>
                             </div>
-                            <div class="form-outline mb-2" style="padding-left:30px;">
+                            <div class="form-outline mb-2" style="">
                                 <p class="DetailsText" for="form3Example1cg" style=""><strong>City: </strong> @Model.City</p>
                             </div>
-                            <div class="form-outline mb-2" style="padding-left:30px;">
+                            <div class="form-outline mb-2" style="">
                                 <p class="DetailsText" for="form3Example1cg" style=""><strong>Street: </strong> @Model.Street</p>
                             </div>
         @if (@Model.PeopleCount.ToString().Length > 0)
         {
-            <div class="form-outline mb-2" style="padding-left:30px;">
+            <div class="form-outline mb-2" style="">
                                 <p class="DetailsText" for="form3Example1cg" style=""><strong>The number of people it can accommodate: </strong> @Model.PeopleCount</p>
                             </div>
         }
 
-                            <div class="form-outline mb-2" style="padding-left:30px;">
+                            <div class="form-outline mb-2" style="">
                                 <p class="DetailsText" for="form3Example1cg" style=""><strong>Description: </strong> @Model.ShelterShortDescription</p>
                             </div>
 
 
 
-                            <div class="form-outline mb-2" style="padding-left:30px;">
+                            
+                           
+                             <!--The div element for the map -->
+   <input
+      id="pac-input"
+      class="controls"
+      type="text"
+      placeholder="Search Box"
+    />
+    <div id="map"></div>
+    
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1gRfrbVI20cLW1Fc8u6rgoq2Yi5z_LJk&callback=initAutocomplete&libraries=places&v=weekly"
+      defer
+    ></script>
+
+    <div class="form-outline mb-2" style="padding-top:15px;">
                                 <a class="btn btn-primary btn-lg text-white" asp-controller="Shelter" asp-action="GetAllShelters" role="button">Back</a>
                             </div>
-                           
 
 
-
-
-</div>
 </div>
