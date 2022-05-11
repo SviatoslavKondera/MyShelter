@@ -3,8 +3,7 @@
 @{
     ViewData["Title"] = "Shelters";
     Layout = "_Layout";
-    IEnumerable<Category> categAv = ViewData["AvailebleCategories"] as System.Collections.Generic.IEnumerable<Category>;
-  
+
 }
 
 
@@ -12,33 +11,30 @@
 
 <div class="manage course content" style="width:74%;">
 
-<section class="search-sec">
-    <div class="container">
-        <form action="#" method="post" novalidate="novalidate">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-5 col-md-3 col-sm-12 p-0">
-                            <input type="text" class="form-control search-slt" placeholder="Enter City" >
-                        </div>
-                      
-                        <div class="col-lg-5 col-md-3 col-sm-12 p-0">
+    <section class="search-sec">
+        <div class="container">
+            <form action="#" method="post" novalidate="novalidate">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            @using (Html.BeginForm("GetAllShelters", "Shelter", FormMethod.Get))
+                            {
+                                <div class="col-lg-5 col-md-3 col-sm-12 p-0">
+                            @Html.TextBox("searching" ,null,new {placeholder = "Enter name", @class= "form-control search-slt"})
+                            </div>
 
-                            <select class="form-control search-slt" asp-for"">
-                                <option>Choose Category</option>
-                                    @foreach(var item in categAv)
-                                    {
-                                       <option>
-                                       <p style="font-family:Arial;">@item.name</p>
-                                       </option>
-                                    }   
-                            </select>
-                       
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-12 p-0">
-                            <a class="btn btn-primary wrn-btn text-white" style="padding: 10px;" asp-action"GetAllShelters">Search</a>
-                        </div>
-                    </div>
+                            <div class="col-lg-5 col-md-3 col-sm-12 p-0">
+                             @Html.TextBox("City" ,null,new {placeholder = "Enter city", @class= "form-control search-slt"})
+                           
+
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-12 p-0">
+                            <input  type="submit" value="Search" class="btn btn-primary wrn-btn text-white" style="padding: 10px;border-radius:3px;"/>
+                            </div>
+
+                            }
+                            
+                            </div>
                 </div>
             </div>
         </form>

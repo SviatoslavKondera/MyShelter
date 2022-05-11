@@ -39,12 +39,19 @@ namespace MyShelter.Controllers
         }
         
         [AllowAnonymous]
-        public IActionResult GetAllShelters()
+        public IActionResult GetAllShelters(string searching, string City)
         {
             var shelters = shelterService.GetAllShelters();
 
-            ViewData["AvailebleCategories"] = categoryService.GetAllCategories();
-            return View(shelters);
+            if (!String.IsNullOrEmpty(searching))
+            {
+                shelters = shelters.Where(s => s.ShelterName.Contains(searching));
+            }
+            if (!String.IsNullOrEmpty(City))
+            {
+                shelters = shelters.Where(s => s.City.Contains(City));
+            }
+            return View(shelters.ToList());
         }
 
         public IActionResult CreateShelter()
