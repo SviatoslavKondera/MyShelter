@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Http;
 using MyShelter.ViewModels;
 using Microsoft.Extensions.Hosting.Internal;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MyShelter.Controllers
 {
@@ -39,9 +40,10 @@ namespace MyShelter.Controllers
         }
         
         [AllowAnonymous]
-        public IActionResult GetAllShelters(string searching, string City)
+        public IActionResult GetAllShelters(string SelectOption, string searching, string City)
         {
             var shelters = shelterService.GetAllShelters();
+            ViewData["AvailebleCategories"] = categoryService.GetAllCategories();
 
             if (!String.IsNullOrEmpty(searching))
             {
@@ -50,6 +52,10 @@ namespace MyShelter.Controllers
             if (!String.IsNullOrEmpty(City))
             {
                 shelters = shelters.Where(s => s.City.Contains(City));
+            }
+            if (!String.IsNullOrEmpty(SelectOption))
+            {
+                shelters = shelters.Where(s => s.Category.name.Contains(SelectOption));
             }
             return View(shelters.ToList());
         }

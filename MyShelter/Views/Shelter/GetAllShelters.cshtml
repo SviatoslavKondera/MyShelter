@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Shelters";
     Layout = "_Layout";
-
+    IEnumerable<Category> categAv = ViewData["AvailebleCategories"] as System.Collections.Generic.IEnumerable<Category>;
 }
 
 
@@ -19,13 +19,23 @@
                         <div class="row">
                             @using (Html.BeginForm("GetAllShelters", "Shelter", FormMethod.Get))
                             {
-                                <div class="col-lg-5 col-md-3 col-sm-12 p-0">
+                                <div class="col-lg-4 col-md-3 col-sm-12 p-0">
                             @Html.TextBox("searching" ,null,new {placeholder = "Enter name", @class= "form-control search-slt"})
                             </div>
 
-                            <div class="col-lg-5 col-md-3 col-sm-12 p-0">
+                            <div class="col-lg-3 col-md-3 col-sm-12 p-0">
                              @Html.TextBox("City" ,null,new {placeholder = "Enter city", @class= "form-control search-slt"})
                            
+
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                            <select id="SelectOption" name="SelectOption" class="form-control search-slt">
+                                <option value="" disabled selected>Select Category</option>
+                                        @foreach(var item in categAv)
+                                        {
+                                            <option value="@item.name">@item.name</option>
+                                        }
+                                        </select>
 
                             </div>
                             <div class="col-lg-2 col-md-3 col-sm-12 p-0">
