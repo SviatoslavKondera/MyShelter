@@ -1,5 +1,5 @@
-using Business_Layer.Services;
-using Business_Layer.Services.Interfaces;
+using BLL.Services;
+using BLL.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,25 +33,44 @@ namespace MyShelter
         {
             services.AddControllersWithViews();
 
-            //services.AddMvc(config => {
-            //    var policy = new AuthorizationPolicyBuilder()
-            //                    .RequireAuthenticatedUser()
-            //                    .Build();
-            //    config.Filters.Add(new AuthorizeFilter(policy));
-            //});
+            services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                                .RequireAuthenticatedUser()
+                                .Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
 
-            services.AddMvc();
-
-
-            services.AddScoped<IShelterService, ShelterService>();
-            services.AddScoped<ICategoryService, CategoryService>();
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-        .AddEntityFrameworkStores<DataContext>();
-            // services.AddScoped<ITestService, ShelterService>();
+            var mailService = Configuration
+                .GetSection("MailService")
+                .Get<MailService>();
+            services.AddSingleton(mailService);
 
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<DbContext, DataContext>();
 
+            services.AddScoped<IMailService, MailService>();
+            services.AddScoped<IShelterService, ShelterService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                options.SignIn.RequireConfirmedEmail = true;
+
+            })
+        .AddEntityFrameworkStores<DataContext>().AddDefaultTokenProviders();
+
+
+
+
+
+
+
+            services.ConfigureApplicationCookie(config =>
+            {
+                config.Cookie.Name = "Identity.Cookie";
+                config.LoginPath = "/Account/Login";
+            }
+            );
 
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -71,7 +90,6 @@ namespace MyShelter
                 app.UseHsts();
             }
 
-           // AddData.Initialize(app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope().ServiceProvider);
 
             app.UseStatusCodePages();
             app.UseHttpsRedirection();
@@ -89,6 +107,7 @@ namespace MyShelter
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Shelter}/{action=GetAllShelters}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }

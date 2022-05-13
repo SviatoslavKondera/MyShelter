@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6sQwnDY/7XQKeH+7n9M9PZ5p4qzovgQ8Qu7uOeVc65nttHhix7Z4QP28lT4rSbMrE1SNob51HOcf5cMvnDaSEQ==",
+  "dgSpecHash": "XlM/bddtP9cCQ65Wi5sRtamP6VtVC/o5VGLUJHNMRdJpxrxwufXLU/QTPszzu5RsZqO3QflD/04pP1JMsVb8/Q==",
   "success": true,
-  "projectFilePath": "D:\\My Visual Studio proj\\MyShelter\\MyShelter\\MyShelter.csproj",
+  "projectFilePath": "D:\\My Visual Studio proj\\MyShelter\\MyShelter\\Presentation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\entityframework.sqlservercompact\\6.4.4\\entityframework.sqlservercompact.6.4.4.nupkg.sha512",

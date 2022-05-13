@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "Business Layer\BLL.c
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "Data Access Layer\DAL.csproj", "{0B1F8AB5-A3A1-48E1-B254-6AFEFD083FAF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyShelter", "MyShelter\MyShelter.csproj", "{18E98C46-6ACC-48C7-871E-75DCCA88250A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation", "MyShelter\Presentation.csproj", "{18E98C46-6ACC-48C7-871E-75DCCA88250A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

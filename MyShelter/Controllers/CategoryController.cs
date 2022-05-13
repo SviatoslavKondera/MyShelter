@@ -7,8 +7,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
-using Business_Layer.Services;
-using Business_Layer.Services.Interfaces;
+using BLL.Services;
+using BLL.Services.Interfaces;
 using Data_Access_Layer.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNet.Identity;
@@ -19,7 +19,7 @@ using MyShelter.ViewModels;
 
 namespace LNU_Test_Portal.Controllers
 {
-    [Authorize]
+    
     public class CategoryController : Controller
     {
         private readonly ILogger<CategoryController> logger;

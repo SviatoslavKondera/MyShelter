@@ -31,7 +31,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "MyShelter/1.0.0": {
+      "Presentation/1.0.0": {
         "dependencies": {
           "BLL": "1.0.0",
           "DAL": "1.0.0",
@@ -328,10 +328,10 @@
           "WindowsBase": "4.0.0.0"
         },
         "runtime": {
-          "MyShelter.dll": {}
+          "Presentation.dll": {}
         },
         "compile": {
-          "MyShelter.dll": {}
+          "Presentation.dll": {}
         }
       },
       "EntityFramework/6.4.4": {
@@ -4124,7 +4124,7 @@
     }
   },
   "libraries": {
-    "MyShelter/1.0.0": {
+    "Presentation/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

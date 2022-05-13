@@ -8,8 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
-using Business_Layer.Services;
-using Business_Layer.Services.Interfaces;
+using BLL.Services;
+using BLL.Services.Interfaces;
 using Data_Access_Layer.Entities;
 using System.IO;
 using System.Web;
@@ -22,6 +22,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MyShelter.Controllers
 {
+    [AllowAnonymous]
     public class ShelterController : Controller
     {
         private readonly ILogger<ShelterController> logger;

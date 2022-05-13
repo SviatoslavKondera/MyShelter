@@ -9964,9 +9964,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\My Visual Studio proj\\MyShelter\\MyShelter\\MyShelter.csproj",
-      "projectName": "MyShelter",
-      "projectPath": "D:\\My Visual Studio proj\\MyShelter\\MyShelter\\MyShelter.csproj",
+      "projectUniqueName": "D:\\My Visual Studio proj\\MyShelter\\MyShelter\\Presentation.csproj",
+      "projectName": "Presentation",
+      "projectPath": "D:\\My Visual Studio proj\\MyShelter\\MyShelter\\Presentation.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "D:\\My Visual Studio proj\\MyShelter\\MyShelter\\obj\\",
       "projectStyle": "PackageReference",

@@ -1,4 +1,4 @@
-﻿using Business_Layer.Services.Interfaces;
+﻿using BLL.Services.Interfaces;
 using Data_Access_Layer.Entities;
 using Data_Access_Layer.Repository;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business_Layer.Services
+namespace BLL.Services
 {
     public class ShelterService : IShelterService
     {
