@@ -10,7 +10,6 @@ namespace MyShelter.ViewModels
 {
     public class CategoryEditViewModel :CategoryViewModel
     {
-
         public int Id { get; set; }
         public string ExistingImage { get; set; }
     }
