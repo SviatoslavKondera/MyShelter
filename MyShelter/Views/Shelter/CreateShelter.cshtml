@@ -19,18 +19,18 @@
             <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                 <div class="CreateCourseForm card"  style="border-radius: 15px;">
                     <div class="card-body p-5">
-                        <h2 class="text-uppercase text-center text-white mb-4">Add Your Own Facility</h2>
+                        <h2 class="text-uppercase text-center text-white mb-4">Додати об'єкт міста</h2>
 
                         <form enctype="multipart/form-data" method="post" asp-controller="Shelter" asp-action="CreateShelter">
                             @Html.AntiForgeryToken()
                             <div class="form-outline mb-2">
-                                <label class="form-label text-white" for="form3Example1cg">Shelter Name</label>
+                                <label class="form-label text-white" for="form3Example1cg">Назва об'єкта</label>
                                 <input type="text" id="form3Example1cg" class="form-control form-control-lg" asp-for="ShelterName" />
                             </div>
                             <div class="form-outline mb-2">
-                                <label class="form-label text-white" for="form3Example1cg">Shelter Categry</label>
+                                <label class="form-label text-white" for="form3Example1cg">Категорія</label>
                                 <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" asp-for="CategoryId">
-                                    <option selected>Choose Category...</option>
+                                    <option selected>Оберіть категорію...</option>
                                     @foreach(Category category in categAv)
                                     { 
                                         <option value="@category.id" asp-for="CategoryId">@category.name</option>
@@ -42,32 +42,32 @@
                            
                              <div class="form-row ">
     <div class="col">
-        <label class="form-label text-white" for="form3Example1cg">City</label>
+        <label class="form-label text-white" for="form3Example1cg">Місто</label>
       <input type="text" class="form-control" asp-for="City">
     </div>
     <div class="col">
-        <label class="form-label text-white" for="form3Example1cg">Street</label>
+        <label class="form-label text-white" for="form3Example1cg">Вулиця</label>
       <input type="text" class="form-control" asp-for="Street">
     </div>
   </div>
 
                             <div class="form-outline mb-2">
-                                <label class="form-label text-white" for="form3Example1cg">People Count</label>
+                                <label class="form-label text-white" for="form3Example1cg">Кількість чоловік,яких може помістити (якщо бомбосховище)</label>
                                 <input type="text" id="form3Example1cg" class="form-control form-control-lg" asp-for="PeopleCount" />
                             </div>
 
                             <div class="form-group">
-                                <label class="form-label text-white" for="exampleFormControlTextarea1">Short Description</label>
+                                <label class="form-label text-white" for="exampleFormControlTextarea1">Короткий опис</label>
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" asp-for="ShelterShortDescription"></textarea>
                             </div>
                             <div class="form-group">
-                                <label class="form-label text-white" for="exampleFormControlTextarea1">Long Description</label>
+                                <label class="form-label text-white" for="exampleFormControlTextarea1">Загальний опис</label>
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" asp-for="ShelterLongDescription"></textarea>
                             </div>
                             <div class="form-group">
                              
       
-                                <label class="form-label text-white" for="customFile">Choose File</label>
+                                <label class="form-label text-white" for="customFile">Виберіть картинку</label>
                                 <input type="file" class="form-control" id="customFile"  asp-for="Image"/>
                                
                             </div>
@@ -76,8 +76,8 @@
      
 
                             <div class="d-flex justify-content-end">
-                                <a class="CancelButton text-white" asp-area="" asp-controller="Shelter" asp-action="GetAllShelters">Cancel</a>
-                                <input type="submit" class="SaveCourseButton btn text-white" name="save" value="Save" />
+                                <a class="CancelButton text-white" asp-area="" asp-controller="Shelter" asp-action="GetAllShelters">Скасувати</a>
+                                <input type="submit" class="SaveCourseButton btn text-white" name="save" value="Зберегти" />
                             </div>
       
                         </form>

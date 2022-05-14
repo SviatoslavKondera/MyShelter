@@ -23,10 +23,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="CoursePageName  nav-link text-white font-weight-bold " asp-area="" asp-controller="Shelter" asp-action="GetAllShelters">Facilities</a>
+                            <a class="CoursePageName  nav-link text-white font-weight-bold " asp-area="" asp-controller="Shelter" asp-action="GetAllShelters">Об'єкти Міста</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white font-weight-bold" asp-area="" asp-controller="Category" asp-action="GetAllCategories">Categories</a>
+                            <a class="nav-link text-white font-weight-bold" asp-area="" asp-controller="Category" asp-action="GetAllCategories">Категорії</a>
                         </li>
 
                     
@@ -39,7 +39,7 @@
                     <a class="Usname text-white">User: @User.Identity.Name</a>
                     <button type="submit" style="width:auto; font-size:20px;padding:0px; color:white;"
                             class="nav-link btn btn-link ">
-                        Logout
+                        Вийти
                     </button>
                 </form>
             </li>
@@ -48,12 +48,12 @@
                         {
                             <li class="nav-item">
                 <a class="nav-link" asp-controller="account" asp-action="register" style="color:white;">
-                    Register
+                    Реєстрація
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" asp-controller="account" asp-action="login" style="color:white;">
-                    Login
+                    Увійти
                 </a>
             </li>
 
@@ -75,7 +75,7 @@
 
     <footer class="border-top footer text-white">
         <div class="container">
-            &copy; 2022   #StandWithUkraine
+            &copy; 2022 Моніторинг Об'єктів Міста #StandWithUkraine
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

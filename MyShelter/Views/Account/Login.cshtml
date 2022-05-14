@@ -12,38 +12,38 @@
             <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                 <div class="LogInForm card"  style="border-radius: 15px; border-width:2px;border-color:#0e6ccd;">
                     <div class="card-body p-5">
-                        <h2 class="text-uppercase text-center mb-4" style="color: #0e6ccd;">Monitoring of city facilities</h2>
+                        <h2 class="text-uppercase text-center mb-4" style="color: #0e6ccd;">Моніторинг об'єктів міста</h2>
 
                         <form method="post">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
-                <label style="color: #0e6ccd;" asp-for="Email"></label>
+                <label style="color: #0e6ccd;">Пошта</label>
                 <input asp-for="Email" class="form-control form-control-lg" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label style="color: #0e6ccd;"  asp-for="Password"></label>
+                <label style="color: #0e6ccd;" >Пароль</label>
                 <input asp-for="Password" class="form-control form-control-lg" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group d-flex justify-content-between">
                 <div class="checkbox">
-                    <label asp-for="RememberMe">
+                    <label>Запам'ятати мене
                         <input asp-for="RememberMe" />
                         @Html.DisplayNameFor(m => m.RememberMe)
                     </label>
                 </div>
                  <p>
-                            <a asp-controller="Account" asp-action="ForgotPassword">Forgot Password ?</a></p>
+                            <a asp-controller="Account" asp-action="ForgotPassword">Забули Пароль ?</a></p>
                 
             </div>
             <div class="d-flex justify-content-center form-outline mb-4">
-            <button type="submit" class="LogInButton btn btn-primary " style="background-color: #0e6ccd; color: #ffffff;margin-top:10px;width:100%;">Login</button>
+            <button type="submit" class="LogInButton btn btn-primary " style="background-color: #0e6ccd; color: #ffffff;margin-top:10px;width:100%;">Увійти</button>
             </div>
             
             <div class="d-flex justify-content-center form-outline mb-4">
                                 <p>If you don't have account, please 
-                            <a asp-controller="Account" asp-action="Register">sign up</a></p>
+                            <a asp-controller="Account" asp-action="Register">Реєстрація</a></p>
                                 </div>
 
                                 

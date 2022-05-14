@@ -24,26 +24,26 @@
                             </div>
 
                             <div class="form-outline mb-2" style="">
-                                <p class="DetailsText" for="form3Example1cg" style=""><strong>Category: </strong> @Model.Category.name</p>
+                                <p class="DetailsText" for="form3Example1cg" style=""><strong>Категорія: </strong> @Model.Category.name</p>
                             </div>
                             <div class="form-outline mb-2" style="">
-                                <p class="DetailsText" for="form3Example1cg" style=""><strong>Name of facility: </strong> @Model.ShelterName</p>
+                                <p class="DetailsText" for="form3Example1cg" style=""><strong>Назва об'єкта: </strong> @Model.ShelterName</p>
                             </div>
                             <div class="form-outline mb-2" style="">
-                                <p class="DetailsText" for="form3Example1cg" style=""><strong>City: </strong> @Model.City</p>
+                                <p class="DetailsText" for="form3Example1cg" style=""><strong>Місто: </strong> @Model.City</p>
                             </div>
                             <div class="form-outline mb-2" style="">
-                                <p class="DetailsText" for="form3Example1cg" style=""><strong>Street: </strong> @Model.Street</p>
+                                <p class="DetailsText" for="form3Example1cg" style=""><strong>Вулиця: </strong> @Model.Street</p>
                             </div>
         @if (@Model.PeopleCount.ToString().Length > 0)
         {
             <div class="form-outline mb-2" style="">
-                                <p class="DetailsText" for="form3Example1cg" style=""><strong>The number of people it can accommodate: </strong> @Model.PeopleCount</p>
+                                <p class="DetailsText" for="form3Example1cg" style=""><strong>Кількість чоловік, які може вмістити: </strong> @Model.PeopleCount</p>
                             </div>
         }
 
                             <div class="form-outline mb-2" style="">
-                                <p class="DetailsText" for="form3Example1cg" style=""><strong>Description: </strong> @Model.ShelterLongDescription</p>
+                                <p class="DetailsText" for="form3Example1cg" style=""><strong>Опис: </strong> @Model.ShelterLongDescription</p>
                             </div>
 
 
@@ -65,7 +65,7 @@
     ></script>
 
     <div class="form-outline mb-2" style="padding-top:15px;">
-                                <a class="btn btn-primary btn-lg text-white" asp-controller="Shelter" asp-action="GetAllShelters" role="button">Back</a>
+                                <a class="btn btn-primary btn-lg text-white" asp-controller="Shelter" asp-action="GetAllShelters" role="button">Назад</a>
                             </div>
 
 

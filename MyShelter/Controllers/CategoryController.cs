@@ -19,7 +19,7 @@ using MyShelter.ViewModels;
 
 namespace LNU_Test_Portal.Controllers
 {
-    
+    [AllowAnonymous]
     public class CategoryController : Controller
     {
         private readonly ILogger<CategoryController> logger;

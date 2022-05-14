@@ -20,17 +20,17 @@
                             @using (Html.BeginForm("GetAllShelters", "Shelter", FormMethod.Get))
                             {
                                 <div class="col-lg-4 col-md-3 col-sm-12 p-0">
-                            @Html.TextBox("searching" ,null,new {placeholder = "Enter name", @class= "form-control search-slt"})
+                            @Html.TextBox("searching" ,null,new {placeholder = "Введіть назву об'єкту", @class= "form-control search-slt"})
                             </div>
 
                             <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                             @Html.TextBox("City" ,null,new {placeholder = "Enter city", @class= "form-control search-slt"})
+                             @Html.TextBox("City" ,null,new {placeholder = "Введіть місто", @class= "form-control search-slt"})
                            
 
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-12 p-0">
                             <select id="SelectOption" name="SelectOption" class="form-control search-slt">
-                                <option value="" disabled selected>Select Category</option>
+                                <option value="" disabled selected>Оберіть категорію</option>
                                         @foreach(var item in categAv)
                                         {
                                             <option value="@item.name">@item.name</option>
@@ -39,7 +39,7 @@
 
                             </div>
                             <div class="col-lg-2 col-md-3 col-sm-12 p-0">
-                            <input  type="submit" value="Search" class="btn btn-primary wrn-btn text-white" style="padding: 10px;border-radius:3px;"/>
+                            <input  type="submit" value="Пошук" class="btn btn-primary wrn-btn text-white" style="padding: 10px;border-radius:3px;"/>
                             </div>
 
                             }
@@ -58,7 +58,7 @@
 
 
 
-    <a class="btn btn-primary text-white" asp-controller="Shelter" asp-action="CreateShelter">Create Facility</a>
+    <a class="btn btn-primary text-white" asp-controller="Shelter" asp-action="CreateShelter">Додати об'єкт міста</a>
     @{
         int num = 0;
         foreach(var shelter in Model)
@@ -74,9 +74,9 @@
   <div class="d-flex flex-row">
 
   <div class=" d-flex p-1 align-self-end" style="margin-bottom:12px;">
-      <a class="btn btn-primary text-white" asp-controller="Shelter" asp-action="EditShelter" role="button" asp-route-id="@shelter.id" style="width:80px;">Edit</a>
-       <a class="btn btn-primary text-white" asp-controller="Shelter" asp-action="DeleteShelter" role="button" asp-route-id="@shelter.id"  style="margin-left:10px; width:80px;">Delete</a>
-       <a class="btn btn-primary text-white" asp-controller="Shelter" asp-action="ShelterDetails" role="button" asp-route-id="@shelter.id"  style="margin-left:10px; width:80px;">Details</a>
+      <a class="btn btn-primary text-white" asp-controller="Shelter" asp-action="EditShelter" role="button" asp-route-id="@shelter.id" style="width:80px;">Редагувати</a>
+       <a class="btn btn-primary text-white" asp-controller="Shelter" asp-action="DeleteShelter" role="button" asp-route-id="@shelter.id"  style="margin-left:10px; width:80px;">Видалити</a>
+       <a class="btn btn-primary text-white" asp-controller="Shelter" asp-action="ShelterDetails" role="button" asp-route-id="@shelter.id"  style="margin-left:10px; width:80px;">Деталі</a>
   </div>
   
 </div>
