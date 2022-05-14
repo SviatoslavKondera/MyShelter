@@ -1,4 +1,4 @@
-﻿@using Data_Access_Layer.Entities
+@using Data_Access_Layer.Entities
 @using Microsoft.AspNetCore.Identity
 
 @model IEnumerable<Data_Access_Layer.Entities.Category>
@@ -27,8 +27,8 @@
   <div class="d-flex flex-row">
 
   <div class=" d-flex p-1 align-self-end" style="margin-bottom:12px;">
-      <a class="btn btn-primary text-white" asp-controller="Category" asp-action="Edit" role="button" asp-route-id="@cat.id" style="width:80px;">Редагувати</a>
-       <a class="btn btn-primary text-white" asp-controller="Category" asp-action="Delete" role="button" asp-route-id="@cat.id"  style="margin-left:10px; width:80px;">Видалити</a>
+      <a class="btn btn-primary text-white" asp-controller="Category" asp-action="Edit" role="button" asp-route-id="@cat.id" >Редагувати</a>
+       <a class="btn btn-primary text-white" asp-controller="Category" asp-action="Delete" role="button" asp-route-id="@cat.id"  style="margin-left:10px;">Видалити</a>
   </div>
   
 </div>

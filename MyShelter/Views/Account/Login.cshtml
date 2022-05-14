@@ -12,38 +12,38 @@
             <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                 <div class="LogInForm card"  style="border-radius: 15px; border-width:2px;border-color:#0e6ccd;">
                     <div class="card-body p-5">
-                        <h2 class="text-uppercase text-center mb-4" style="color: #0e6ccd;">Моніторинг об'єктів міста</h2>
+                        <h2 class="text-uppercase text-center mb-4" style="color: #0e6ccd;">РњРѕРЅС–С‚РѕСЂРёРЅРі РѕР±'С”РєС‚С–РІ РјС–СЃС‚Р°</h2>
 
                         <form method="post">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
-                <label style="color: #0e6ccd;">Пошта</label>
+                <label style="color: #0e6ccd;">РџРѕС€С‚Р°</label>
                 <input asp-for="Email" class="form-control form-control-lg" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label style="color: #0e6ccd;" >Пароль</label>
+                <label style="color: #0e6ccd;" >РџР°СЂРѕР»СЊ</label>
                 <input asp-for="Password" class="form-control form-control-lg" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group d-flex justify-content-between">
                 <div class="checkbox">
-                    <label>Запам'ятати мене
+                    <label>
                         <input asp-for="RememberMe" />
-                        @Html.DisplayNameFor(m => m.RememberMe)
+                        Р—Р°РїР°Рј'СЏС‚Р°С‚Рё РјРµРЅРµ
                     </label>
                 </div>
                  <p>
-                            <a asp-controller="Account" asp-action="ForgotPassword">Забули Пароль ?</a></p>
+                            <a asp-controller="Account" asp-action="ForgotPassword">Р—Р°Р±СѓР»Рё РџР°СЂРѕР»СЊ ?</a></p>
                 
             </div>
             <div class="d-flex justify-content-center form-outline mb-4">
-            <button type="submit" class="LogInButton btn btn-primary " style="background-color: #0e6ccd; color: #ffffff;margin-top:10px;width:100%;">Увійти</button>
+            <button type="submit" class="LogInButton btn btn-primary " style="background-color: #0e6ccd; color: #ffffff;margin-top:10px;width:100%;">РЈРІС–Р№С‚Рё</button>
             </div>
             
             <div class="d-flex justify-content-center form-outline mb-4">
-                                <p>If you don't have account, please 
-                            <a asp-controller="Account" asp-action="Register">Реєстрація</a></p>
+                                <p class="text-center">РЇРєС‰Рѕ Сѓ Р’Р°СЃ РЅРµ РјР°С” С‰Рµ Р°РєР°СѓРЅС‚Р°, Р±СѓРґСЊ Р»Р°СЃРєР°  
+                            <a asp-controller="Account" asp-action="Register">Р·Р°СЂРµС”СЃС‚СЂСѓР№С‚РµСЃСЊ</a></p>
                                 </div>
 
                                 
