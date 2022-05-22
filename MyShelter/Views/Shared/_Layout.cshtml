@@ -34,9 +34,18 @@
                     <ul class="navbar-nav ml-auto">
                         @if (signInManager.IsSignedIn(User))
                         {
-            <li class="nav-item justify-content-end align-items-end">
-                <form method="post" asp-controller="account" asp-action="logout">
-                    <a class="Usname text-white">User: @User.Identity.Name</a>
+                            <li class="nav-item justify-content-end align-items-end">
+                                <form method="post" asp-controller="account" asp-action="logout">
+
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <a class="Usname text-white">Адміністратор: @User.Identity.Name</a>
+                                    }
+                                    @if(User.IsInRole("SimpleUser"))
+                                    {
+                                        <a class="Usname text-white">Користувач: @User.Identity.Name</a>
+                                    }
+                    
                     <button type="submit" style="width:auto; font-size:20px;padding:0px; color:white;"
                             class="nav-link btn btn-link ">
                         Вийти

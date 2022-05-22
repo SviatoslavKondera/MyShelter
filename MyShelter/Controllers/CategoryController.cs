@@ -11,7 +11,7 @@ using BLL.Services;
 using BLL.Services.Interfaces;
 using Data_Access_Layer.Entities;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNet.Identity;
+//using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Identity;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
@@ -19,7 +19,7 @@ using MyShelter.ViewModels;
 
 namespace LNU_Test_Portal.Controllers
 {
-    [AllowAnonymous]
+    [Authorize]
     public class CategoryController : Controller
     {
         private readonly ILogger<CategoryController> logger;
@@ -27,16 +27,21 @@ namespace LNU_Test_Portal.Controllers
         private readonly ICategoryService categoryService;
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly IHostingEnvironment hostingEnvironment;
+        private readonly UserManager<ApplicationUser> userManager;
 
-        public CategoryController(ILogger<CategoryController> logger, IConfiguration configuration, ICategoryService categoryService, SignInManager<ApplicationUser> signInManager, IHostingEnvironment hostingEnvironment)
+        public CategoryController(ILogger<CategoryController> logger, IConfiguration configuration,
+            ICategoryService categoryService, SignInManager<ApplicationUser> signInManager,
+            IHostingEnvironment hostingEnvironment, UserManager<ApplicationUser> userManager)
         {
             this.logger = logger;
             this.configuration = configuration;
             this.categoryService = categoryService;
             this.signInManager = signInManager;
             this.hostingEnvironment = hostingEnvironment;
+            this.userManager = userManager;
         }
 
+        [AllowAnonymous]
         public IActionResult GetAllCategories()
         {
 
@@ -47,6 +52,7 @@ namespace LNU_Test_Portal.Controllers
         }
 
 
+        
         public IActionResult Create()
         {
             
@@ -74,9 +80,13 @@ namespace LNU_Test_Portal.Controllers
                 {
                     description = model.description,
                     name = model.name,
-                    Image = uniqueFileName
+                    Image = uniqueFileName,
+                    UserId = userManager.GetUserId(User)
+                    
                 };
 
+
+                
                 categoryService.AddNewCategory(newCategory);
             }
 

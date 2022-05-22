@@ -98,25 +98,25 @@ namespace MyShelter.Controllers
                     var confirmationLink = Url.Action("ConfirmSuccess", "Account",
                         new { userId = user.Id, token = token }, Request.Scheme);
 
-                    string To = "mylnu.service @gmail.com";
-                    string Subject = "Email Confirmation";
-                    string PartObBody = " Please conform your email by clicking button.";
+                    string To = "mylnu.service@gmail.com";
+                    string Subject = "Ï³äòâåğäæåííÿ ïîøòè";
+                    string PartObBody = " Áóäü ëàñêà ï³äòâåğä³òü âàøó ïîøòó, íàòèñíóâøè íà öş êíîïêó";
                     mailService.SendEmail(To, confirmationLink, Subject, PartObBody);
 
-                    if (!roleManager.RoleExistsAsync("Student").Result)
+                    if (!roleManager.RoleExistsAsync("SimpleUser").Result)
                     {
-                        await roleManager.CreateAsync(new IdentityRole("Student"));//create role
+                        await roleManager.CreateAsync(new IdentityRole("SimpleUser"));//create role
                     }
-                    if (!roleManager.RoleExistsAsync("Teacher").Result)
+                    if (!roleManager.RoleExistsAsync("Admin").Result)
                     {
-                        await roleManager.CreateAsync(new IdentityRole("Teacher"));//create role
+                        await roleManager.CreateAsync(new IdentityRole("Admin"));//create role
                     }
 
                     if (signInManager.IsSignedIn(User))
                     {
                         return RedirectToAction("GetAllShelters", "Shelter");
                     }
-                    await userManager.AddToRoleAsync(user, "Teacher");  // add default role   ÓÂÀÃÀ  ÄËß ÏĞÀÂ ĞÎÁ ÒÓÒ ÌÀª ÁÓÒÈ ÑÒÓÄÅÍÒ
+                    await userManager.AddToRoleAsync(user, "SimpleUser");  // add default role   ÓÂÀÃÀ  ÄËß ÏĞÀÂ ĞÎÁ ÒÓÒ ÌÀª ÁÓÒÈ SimpleUser
                     ViewBag.Title = "Registration successful.We send you email ";
                     return View("ConfirmEmail");
                 }

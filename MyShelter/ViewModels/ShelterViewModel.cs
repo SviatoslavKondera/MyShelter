@@ -19,5 +19,8 @@ namespace MyShelter.ViewModels
         public int PeopleCount { get; set; }
         public Category Category { get; set; }
         public int CategoryId { get; set; }
+
+        public virtual ApplicationUser User { get; set; }
+        public string UserId { get; set; }
     }
 }

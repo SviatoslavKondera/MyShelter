@@ -43,7 +43,8 @@ namespace BLL.Services
                 Street = x.Street,
                 PeopleCount = x.PeopleCount,
                 CategoryId = categoryRepository.SelectOneById(x.CategoryId).id,
-                Category = categoryRepository.SelectOneById(x.CategoryId)
+                Category = categoryRepository.SelectOneById(x.CategoryId),
+                UserId = x.UserId
                 
             }) ;
         }

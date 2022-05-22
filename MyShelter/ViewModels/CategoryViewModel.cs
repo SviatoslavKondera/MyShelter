@@ -15,5 +15,9 @@ namespace MyShelter.ViewModels
         public string description { get; set; }
         public IFormFile Image { get; set; }
         public virtual IEnumerable<Shelter> Shelters { get; set; }
+
+
+        public virtual ApplicationUser User { get; set; }
+        public string UserId { get; set; }
     }
 }

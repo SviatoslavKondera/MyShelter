@@ -10,20 +10,23 @@ namespace Data_Access_Layer.Entities
 {
     public class Shelter : BaseEntity
     {
-        [Required]
+        
         public string ShelterName { get; set; }
-        [Required]
+       
         public string ShelterShortDescription { get; set; }
         public string ShelterLongDescription { get; set; }
-        [Required]
+       
         public string Image { get; set; }
-        [Required]
+        
         public string City { get; set; }
-        [Required]
+        
         public string Street { get; set; }
         public int PeopleCount { get; set; }
         public Category Category { get; set; }
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
+
+        public string UserId { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }

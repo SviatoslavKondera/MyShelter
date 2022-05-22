@@ -9,6 +9,7 @@ namespace Data_Access_Layer.Entities
 {
     public class ApplicationUser:IdentityUser
     {
-
+        public virtual IEnumerable<Category> Categories { get; set; }
+        public virtual IEnumerable<Shelter> Shelters { get; set; }
     }
 }

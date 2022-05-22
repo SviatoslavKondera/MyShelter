@@ -27,10 +27,10 @@ namespace BLL.Services
                 "<link rel=\"stylesheet\" href=\"~/lib/bootstrap/dist/css/bootstrap.min.css\"/>" +
 "<body>" +
             "<h3>" +
-            "Hi, " + To + " . It is Monitoring of city facilities Team.<br> " + PartOfBody +
+            "Привіт, " + To + " . Це команда Моніторингу Об'єктів міста.<br> " + PartOfBody +
             "</h3>" +
             "<div style=\"height:90px; \">"+
-    "<a href =\"" + ConfirmLink + "\" class=\"btn btn-primary\" style=\"background-color: #0e6ccd; color: white; border: none;padding: 15px 32px; text-align: center;text-decoration: none;font-size: 16px;margin: 30px 2px;border-radius:10px;\">Please,Click Here</a>" +
+    "<a href =\"" + ConfirmLink + "\" class=\"btn btn-primary\" style=\"background-color: #0e6ccd; color: white; border: none;padding: 15px 32px; text-align: center;text-decoration: none;font-size: 16px;margin: 30px 2px;border-radius:10px;\">Підтвердити пошту</a>" +
 "</div>" +
 "</body>" +
 "</html>";

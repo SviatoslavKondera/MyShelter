@@ -19,6 +19,7 @@ using MyShelter.ViewModels;
 using Microsoft.Extensions.Hosting.Internal;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Identity;
 
 namespace MyShelter.Controllers
 {
@@ -30,14 +31,17 @@ namespace MyShelter.Controllers
         private readonly IConfiguration configuration;
         private readonly IShelterService shelterService;
         private readonly ICategoryService categoryService;
+        private readonly UserManager<ApplicationUser> userManager;
 
-        public ShelterController(ILogger<ShelterController> logger, IHostingEnvironment hostingEnvironment, IConfiguration configuration, IShelterService shelterService, ICategoryService categoryService)
+        public ShelterController(ILogger<ShelterController> logger, IHostingEnvironment hostingEnvironment, IConfiguration configuration,
+            IShelterService shelterService, ICategoryService categoryService, UserManager<ApplicationUser> userManager)
         {
             this.logger = logger;
             this.configuration = configuration;
             this.shelterService = shelterService;
             this.categoryService = categoryService;
             this.hostingEnvironment = hostingEnvironment;
+            this.userManager = userManager;
         }
         
         [AllowAnonymous]
@@ -94,7 +98,8 @@ namespace MyShelter.Controllers
                     Street = model.Street,
                     PeopleCount = model.PeopleCount,
                     CategoryId = model.CategoryId,
-                    Category = categoryService.GetCategoryById(model.CategoryId)
+                    Category = categoryService.GetCategoryById(model.CategoryId),
+                    UserId = userManager.GetUserId(User)
 
                 };
 
