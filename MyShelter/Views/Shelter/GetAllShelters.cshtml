@@ -1,7 +1,7 @@
 @using Data_Access_Layer.Entities
 @model IEnumerable<Data_Access_Layer.Entities.Shelter>
 @{
-    ViewData["Title"] = "Shelters";
+    ViewData["Title"] = "Об'єкти міста";
     Layout = "_Layout";
     IEnumerable<Category> categAv = ViewData["AvailebleCategories"] as System.Collections.Generic.IEnumerable<Category>;
 }
@@ -12,7 +12,7 @@
 
 <div class="manage course content" style="width:74%;">
 
-    <section class="search-sec">
+    <section class="search-sec" style="margin-bottom:1px;">
         <div class="container">
             <form method="post" novalidate="novalidate">
                 <div class="row">
@@ -42,6 +42,17 @@
                             <div class="col-lg-2 col-md-3 col-sm-12 p-0">
                             <input  type="submit" value="Пошук" class="btn btn-primary wrn-btn text-white" style="padding: 10px;border-radius:3px;"/>
                             </div>
+
+                            @if (signInManager.IsSignedIn(User))
+                                {
+                                     <div style="margin-top:8px;">
+                    
+                        
+                        @Html.CheckBox("isActive", false ,new { style="width:16px;height:16px;id=a;" })
+                            <label for="a" style="font-family:Arial;font-size:17px;padding-left:4px;">Показати лише мої</label>
+                        
+                </div>
+                                }
 
                             }
                             

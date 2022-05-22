@@ -7,15 +7,14 @@
 
 @inject UserManager<ApplicationUser> userManager;
 @{
-    ViewData["Title"] = "Manage Categoty";
+    ViewData["Title"] = "Категорії";
     Layout = "_Layout-2";
 
 }
 
 
-<div class="manage course content" style="width:74%;>
-
-    <section class="search-sec">
+<div class="manage course content" style="width:74%;">
+    <section class="search-sec" style="margin-bottom:1px;">
         <div class="container">
             <form method="post" novalidate="novalidate">
                 <div class="row">
@@ -24,27 +23,40 @@
                             @using (Html.BeginForm("GetAllCategories", "Category", FormMethod.Get))
                             {
                                 <div class="col-lg-10 col-md-3 col-sm-12 p-0">
-                            @Html.TextBox("searching" ,null,new {placeholder = "Введіть назву об'єкту", @class= "form-control search-slt"})
+                            @Html.TextBox("searching" ,null,new {placeholder = "Введіть назву категорії", @class= "form-control search-slt"})
                             </div>
-                            <div class="col-lg-2 col-md-3 col-sm-12 p-0">
-                            <input  type="submit" value="Пошук" class="btn btn-primary wrn-btn text-white" style="padding: 10px;border-radius:3px;"/>
-                            </div>
+                                <div class="col-lg-2 col-md-3 col-sm-12 p-0">
+                                    <input  type="submit" value="Пошук" class="btn btn-primary wrn-btn text-white" style="padding: 10px;border-radius:3px;"/>
+                                </div>
+                                @if (signInMahager.IsSignedIn(User))
+                                {
+                                     <div style="margin-top:8px;">
+                    
+                        
+                        @Html.CheckBox("isActive", false ,new { style="width:16px;height:16px;id=a;" })
+                            <label for="a" style="font-family:Arial;font-size:17px;padding-left:4px;">Показати лише мої</label>
+                        
+                </div>
+                                }
+                           
+                            
 
                             }
                             
                             </div>
                 </div>
+                
             </div>
         </form>
     </div>
-</section>
+    </section>
 
 
   
 
     @{
         @if(signInMahager.IsSignedIn(User)){
-         <a class="btn btn-primary text-white" asp-controller="Category" asp-action="Create">Додати категорію</a>
+         <a class="btn btn-primary text-white"  asp-action="Create">Додати категорію</a>
      }
 
         int num = 0;

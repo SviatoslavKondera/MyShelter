@@ -42,7 +42,7 @@ namespace LNU_Test_Portal.Controllers
         }
 
         [AllowAnonymous]
-        public IActionResult GetAllCategories(string searching)
+        public IActionResult GetAllCategories(string searching, bool isActive)
         {
 
             var categories = categoryService.GetAllCategories();
@@ -50,6 +50,12 @@ namespace LNU_Test_Portal.Controllers
             {
                 categories = categories.Where(s => s.name.Contains(searching));
             }
+
+            if (isActive == true)
+            {
+                categories = categories.Where(s => s.UserId==userManager.GetUserId(User));
+            }
+            
             logger.LogInformation("Show all categories");
 
             return View(categories);

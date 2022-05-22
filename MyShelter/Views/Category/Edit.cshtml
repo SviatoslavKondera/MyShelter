@@ -11,28 +11,26 @@
     <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                <div class="CreateCourseForm card"  style="border-radius: 15px;">
+               <div class="LogInForm card"  style="border-radius: 15px; border-width:2px;border-color:#0e6ccd;">
                     <div class="card-body p-5">
-                        <h2 class="text-uppercase text-center text-white mb-4">Редагувати категорію</h2>
+                        <h2 class="text-uppercase text-center mb-4" style="color: #0e6ccd;">Редагувати категорію</h2>
 
                         <form enctype="multipart/form-data" method="post" asp-controller="Category" asp-action="Edit">
                             @Html.AntiForgeryToken()
                             <input type="hidden" asp-for="Id" />
                             <div class="form-outline mb-4">
-                                <label class="form-label text-white" for="form3Example1cg">Назва категорії</label>
-                                <input type="text" id="form3Example1cg" class="form-control form-control-lg" asp-for="name" />
+                                <label class="form-label" for="form3Example1cg" style="color: #0e6ccd;">Назва категорії</label>
+                                <input style="border-width:2px;" type="text" id="form3Example1cg" class="form-control form-control-lg" asp-for="name" />
 
                             </div>
 
                             <div class="form-group">
-                                <label class="form-label text-white" for="exampleFormControlTextarea1">Опис</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" asp-for="description"></textarea>
+                                <label class="form-label" for="exampleFormControlTextarea1" style="color: #0e6ccd;">Опис</label>
+                                <textarea style="border-width:2px;" class="form-control" id="exampleFormControlTextarea1" rows="4" asp-for="description"></textarea>
                             </div>
                             <div class="form-group">
-                             
-      
-                                <label class="form-label text-white" for="customFile">Натисніть, щоб змінити зображення</label>
-                                <input type="file" class="form-control" id="customFile"  asp-for="Image" asp-append-version="true"/>
+                                <label class="form-label" for="customFile" style="color: #0e6ccd;">Натисніть, щоб змінити зображення</label>
+                                <input style="border-width:2px;" type="file" class="form-control" id="customFile"  asp-for="Image" asp-append-version="true"/>
                                
                             </div>
                             <div class="form-outline mb-2">
@@ -40,8 +38,8 @@
                             </div>
 
                             <div class="d-flex justify-content-end">
-                                <a class="CancelButton text-white" asp-area="" asp-controller="Category" asp-action="GetAllCategories">Скасувати</a>
-                                <input type="submit" class="SaveCourseButton btn text-white" name="save" value="Оновити"/>
+                                <a class="btn btn-primary " style="background-color: white; color:#0e6ccd;" asp-controller="Category" asp-action="GetAllCategories">Скасувати</a>
+                                <input type="submit" class="btn btn-primary text-white" style="margin-left:10px;" name="save" value="Зберегти" />
                             </div>
                         </form>
 

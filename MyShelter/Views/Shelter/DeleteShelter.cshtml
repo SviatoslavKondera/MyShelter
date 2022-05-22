@@ -1,6 +1,6 @@
 @model Shelter
 @{
-    ViewData["Title"] = "Delete Shelter";
+    ViewData["Title"] = "Видалити Об'єкт";
     Layout = "_Layout";
 var photoPath = "/Images/"+Model.Image;}
 @using Data_Access_Layer.Entities
@@ -12,16 +12,16 @@ var photoPath = "/Images/"+Model.Image;}
     <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                <div class="CreateCourseForm card"  style="border-radius: 15px;">
+               <div class="LogInForm card"  style="border-radius: 15px; border-width:2px;border-color:#0e6ccd;">
                     <div class="card-body p-5">
-                        <h2 class="text-uppercase text-center text-white mb-4">Видалити об'єкт міста?</h2>
+                        <h2 class="text-uppercase text-center mb-4" style="color: #0e6ccd;">Видалити об'єкт міста?</h2>
 
                         <form enctype="multipart/form-data" method="post" asp-controller="Shelter" asp-action="DeleteShelter">
                             @Html.AntiForgeryToken()
                             <input type="hidden" asp-for="id" />
                             <div class="form-outline mb-2">
-                                <label class="form-label text-white" for="form3Example1cg">Назва об'єкта</label>
-                                <input type="text" id="form3Example1cg" class="form-control form-control-lg" asp-for="ShelterName" disabled/>
+                                <label style="color: #0e6ccd;" class="form-label" for="form3Example1cg">Назва об'єкта</label>
+                                <input style="border-width:2px;" type="text" id="form3Example1cg" class="form-control form-control-lg" asp-for="ShelterName" disabled/>
                             </div>
  
                             <div class="form-outline mb-2">
@@ -29,8 +29,8 @@ var photoPath = "/Images/"+Model.Image;}
                             </div>
 
                             <div class="d-flex justify-content-end">
-                                <a class="CancelButton text-white" asp-area="" asp-controller="Shelter" asp-action="GetAllShelters">Скасувати</a>
-                                <input type="submit" class="SaveCourseButton btn text-white" name="delete" value="Видалити" />
+                               <a class="btn btn-primary " style="background-color: white; color:#0e6ccd;" asp-controller="Shelter" asp-action="GetAllShelters">Скасувати</a>
+                                <input type="submit" class="btn bg-danger text-white" style="margin-left:10px;" name="delete" value="Видалити" />
                             </div>
       
                         </form>

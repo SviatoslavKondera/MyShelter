@@ -13,25 +13,24 @@
 
 
 
+
 <div class="mask d-flex align-items-center h-100 gradient-custom-3">
     <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                <div class="CreateCourseForm card"  style="border-radius: 15px;">
+                <div class="LogInForm card"  style="border-radius: 15px; border-width:2px;border-color:#0e6ccd;">
                     <div class="card-body p-5">
-                        <h2 class="text-uppercase text-center text-white mb-4">Редагувати об'єт міста</h2>
+                        <h2 class="text-uppercase text-center mb-4" style="color: #0e6ccd;">Додати об'єкт міста</h2>
 
                         <form enctype="multipart/form-data" method="post" asp-controller="Shelter" asp-action="EditShelter">
                             @Html.AntiForgeryToken()
-                            <input type="hidden" asp-for="Id" />
-                            <input type="hidden" asp-for="ExistingImage" />
                             <div class="form-outline mb-2">
-                                <label class="form-label text-white" for="form3Example1cg">Назва об'єкта</label>
-                                <input type="text" id="form3Example1cg" class="form-control form-control-lg" asp-for="ShelterName" />
+                                <label class="form-label " style="color: #0e6ccd;" for="form3Example1cg">Назва об'єкта</label>
+                                <input style="border-width:2px;" type="text" id="form3Example1cg"  class="form-control form-control-lg" asp-for="ShelterName" />
                             </div>
                             <div class="form-outline mb-2">
-                                <label class="form-label text-white" for="form3Example1cg">Категорія</label>
-                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" asp-for="CategoryId">
+                                <label style="color: #0e6ccd;" class="form-label  " for="form3Example1cg">Категорія</label>
+                                <select style="border-width:2px;" class="custom-select mr-sm-2" id="inlineFormCustomSelect" asp-for="CategoryId">
                                     <option selected>Оберіть категорію...</option>
                                     @foreach(Category category in categAv)
                                     { 
@@ -44,45 +43,43 @@
                            
                              <div class="form-row ">
     <div class="col">
-        <label class="form-label text-white" for="form3Example1cg">Місто</label>
-      <input type="text" class="form-control" asp-for="City">
+        <label style="color: #0e6ccd;" class="form-label  " for="form3Example1cg">Місто</label>
+      <input style="border-width:2px;" type="text" class="form-control" asp-for="City">
     </div>
     <div class="col">
-        <label class="form-label text-white" for="form3Example1cg">Вулиця</label>
-      <input type="text" class="form-control" asp-for="Street">
+        <label class="form-label  " for="form3Example1cg" style="color: #0e6ccd;">Вулиця</label>
+      <input style="border-width:2px;" type="text" class="form-control" asp-for="Street">
     </div>
   </div>
 
                             <div class="form-outline mb-2">
-                                <label class="form-label text-white" for="form3Example1cg">Кількість чоловік,яких може помістити (якщо бомбосховище)</label>
-                                <input type="text" id="form3Example1cg" class="form-control form-control-lg" asp-for="PeopleCount" />
+                                <label style="color: #0e6ccd;" class="form-label  " for="form3Example1cg">Кількість чоловік,яких може помістити</label>
+                                <input style="border-width:2px;" type="text" id="form3Example1cg" class="form-control form-control-lg" asp-for="PeopleCount"  />
                             </div>
 
                             <div class="form-group">
-                                <label class="form-label text-white" for="exampleFormControlTextarea1">Короткий опис</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" asp-for="ShelterShortDescription"></textarea>
+                                <label style="color: #0e6ccd;" class="form-label" for="exampleFormControlTextarea1">Короткий опис</label>
+                                <textarea style="border-width:2px;" class="form-control" id="exampleFormControlTextarea1" rows="4" asp-for="ShelterShortDescription"></textarea>
                             </div>
                             <div class="form-group">
-                                <label class="form-label text-white" for="exampleFormControlTextarea1">Загальний опис</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" asp-for="ShelterLongDescription"></textarea>
+                                <label style="color: #0e6ccd;" class="form-label  " for="exampleFormControlTextarea1">Загальний опис</label>
+                                <textarea style="border-width:2px;" class="form-control" id="exampleFormControlTextarea1" rows="4" asp-for="ShelterLongDescription" ></textarea>
                             </div>
                             <div class="form-group">
                              
       
-                                <label class="form-label text-white" for="customFile">Натисніть, щоб змінити картинку</label>
-                                <input type="file" class="form-control" id="customFile"  asp-for="Image" asp-append-version="true"/>
+                                <label style="color: #0e6ccd;" class="form-label" for="customFile">Натисніть, щоб змінити картинку</label>
+                                <input type="file" style="border-width:2px;" class="form-control" id="customFile"  asp-for="Image" asp-append-version="true"/>
                                
                             </div>
                             <div class="form-outline mb-2">
                             <img class="gjpke" src="@photoPath" width="100%" object-fit="cover" aspect-ratio ="1/1">
                             </div>
-                            
-
-     
+                     
 
                             <div class="d-flex justify-content-end">
-                                <a class="CancelButton text-white" asp-area="" asp-controller="Shelter" asp-action="GetAllShelters">Скасувати</a>
-                                <input type="submit" class="SaveCourseButton btn text-white" name="save" value="Оновити" />
+                                <a class="btn btn-primary " style="background-color: white; color:#0e6ccd;" asp-controller="Shelter" asp-action="GetAllShelters">Скасувати</a>
+                                <input type="submit" class="btn btn-primary text-white" style="margin-left:10px;" name="save" value="Оновити" />
                             </div>
       
                         </form>

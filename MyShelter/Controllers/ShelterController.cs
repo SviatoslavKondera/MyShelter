@@ -45,7 +45,7 @@ namespace MyShelter.Controllers
         }
         
         [AllowAnonymous]
-        public IActionResult GetAllShelters(string SelectOption, string searching, string City)
+        public IActionResult GetAllShelters(string SelectOption, string searching, string City,bool isActive)
         {
             var shelters = shelterService.GetAllShelters();
             ViewData["AvailebleCategories"] = categoryService.GetAllCategories();
@@ -62,6 +62,11 @@ namespace MyShelter.Controllers
             {
                 shelters = shelters.Where(s => s.Category.name.Contains(SelectOption));
             }
+            if (isActive == true)
+            {
+                shelters = shelters.Where(s => s.UserId == userManager.GetUserId(User));
+            }
+
             return View(shelters.ToList());
         }
 
