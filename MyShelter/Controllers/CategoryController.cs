@@ -42,10 +42,14 @@ namespace LNU_Test_Portal.Controllers
         }
 
         [AllowAnonymous]
-        public IActionResult GetAllCategories()
+        public IActionResult GetAllCategories(string searching)
         {
 
             var categories = categoryService.GetAllCategories();
+            if (!String.IsNullOrEmpty(searching))
+            {
+                categories = categories.Where(s => s.name.Contains(searching));
+            }
             logger.LogInformation("Show all categories");
 
             return View(categories);
@@ -94,6 +98,7 @@ namespace LNU_Test_Portal.Controllers
         }
 
 
+        
         public IActionResult Edit(int Id)
         {
             try

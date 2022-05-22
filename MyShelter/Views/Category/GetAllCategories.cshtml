@@ -13,14 +13,34 @@
 }
 
 
-<div class="manage course content">
+<div class="manage course content" style="width:74%;>
+
+    <section class="search-sec">
+        <div class="container">
+            <form method="post" novalidate="novalidate">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            @using (Html.BeginForm("GetAllCategories", "Category", FormMethod.Get))
+                            {
+                                <div class="col-lg-10 col-md-3 col-sm-12 p-0">
+                            @Html.TextBox("searching" ,null,new {placeholder = "Введіть назву об'єкту", @class= "form-control search-slt"})
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-12 p-0">
+                            <input  type="submit" value="Пошук" class="btn btn-primary wrn-btn text-white" style="padding: 10px;border-radius:3px;"/>
+                            </div>
+
+                            }
+                            
+                            </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+
   
-    
-
-     
-
-     
-
 
     @{
         @if(signInMahager.IsSignedIn(User)){
@@ -31,7 +51,7 @@
         foreach(var cat in Model)
         {
             num++;
- <div class="courseDetails d-flex flex-row" style="width:74%;border-width:1px;">
+ <div class="courseDetails d-flex flex-row" style="border-width:1px;">
     <img class="ShelterFirstSqImg" src="~/Images/@cat.Image" />
     <div class="d-flex flex-column"  style="">
   <div class="p-0"><h2 class="CourseName "><b>@cat.name</b></h2></div>
