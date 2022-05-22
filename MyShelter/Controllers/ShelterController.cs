@@ -134,6 +134,8 @@ namespace MyShelter.Controllers
 
         }
 
+        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult EditShelter(ShelterEditViewModel model)
