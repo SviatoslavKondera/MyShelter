@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using Data_Access_Layer.Entities;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MyShelter.ViewModels
 {
@@ -16,7 +17,7 @@ namespace MyShelter.ViewModels
         public string ShelterShortDescription { get; set; }
         [Required(ErrorMessage = "Поле обов'язкове")]
         public string ShelterLongDescription { get; set; }
-        [Required(ErrorMessage = "Поле обов'язкове")]
+        
         public IFormFile Image { get; set; }
         [Required(ErrorMessage = "Поле обов'язкове")]
         public string City { get; set; }
@@ -27,6 +28,13 @@ namespace MyShelter.ViewModels
         public Category Category { get; set; }
        
         public int CategoryId { get; set; }
+        public SelectList CategoryList { get; set; }
+
+
+        [Required(ErrorMessage = "Поле обов'язкове")]
+        public string CategoryStr { get; set; }
+
+
 
         public virtual ApplicationUser User { get; set; }
         public string UserId { get; set; }

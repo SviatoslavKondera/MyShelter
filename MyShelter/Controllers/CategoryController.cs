@@ -100,7 +100,7 @@ namespace LNU_Test_Portal.Controllers
                 categoryService.AddNewCategory(newCategory);
                 return RedirectToAction(nameof(GetAllCategories));
             }
-            return View();
+            return View(model);
 
             
         }
@@ -169,7 +169,7 @@ namespace LNU_Test_Portal.Controllers
                 return RedirectToAction(nameof(GetAllCategories));
             }
 
-            return View();
+            return View(model);
         }
 
 
@@ -190,19 +190,18 @@ namespace LNU_Test_Portal.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int Id)
         {
-            try
+
+            Category category = categoryService.GetCategoryById(Id);
+            if (category.Image != null)
             {
-                Category category = categoryService.GetCategoryById(Id);
                 var ImgPath = Path.Combine(hostingEnvironment.WebRootPath, "Images", category.Image);
                 if (System.IO.File.Exists(ImgPath))
                     System.IO.File.Delete(ImgPath);
-                categoryService.DeleteCategory(category);
-                return RedirectToAction(nameof(GetAllCategories));
             }
-            catch (Exception)
-            {
-                return RedirectToAction(nameof(GetAllCategories));
-            }
+            
+            categoryService.DeleteCategory(category);
+            return RedirectToAction(nameof(GetAllCategories));
+            
         }
 
     }

@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Додати Об'єкт";
     Layout = "_Layout";
-    IEnumerable<Category> categAv = ViewData["AvailebleCategories"] as System.Collections.Generic.IEnumerable<Category>;
+    //IEnumerable<Category> categAv = ViewData["AvailebleCategories"] as System.Collections.Generic.IEnumerable<Category>;
 
 }
 @using Data_Access_Layer.Entities
@@ -30,15 +30,8 @@
                             </div>
                             <div class="form-outline mb-2">
                                 <label style="color: #0e6ccd;" class="form-label  " for="form3Example1cg">Категорія</label>
-                                <select style="border-width:2px;" class="custom-select mr-sm-2" id="inlineFormCustomSelect" asp-for="CategoryId">
-                                    <option selected>Оберіть категорію...</option>
-                                    @foreach(Category category in categAv)
-                                    { 
-                                        <option value="@category.id" asp-for="CategoryId">@category.name</option>
-                                        
-                                    }
-                                    @*<span asp-validation-for="CategoryId" class="text-danger"></span>*@
-                            </select>
+                                <select id="ddlCountries" name="CategoryStr" asp-items="@Model.CategoryList" class="form-control"></select>
+                                <span asp-validation-for="CategoryStr" class="text-danger"></span>
                             
 
                             </div>

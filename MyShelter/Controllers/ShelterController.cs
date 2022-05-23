@@ -72,8 +72,12 @@ namespace MyShelter.Controllers
 
         public IActionResult CreateShelter()
         {
-            ViewData["AvailebleCategories"] = categoryService.GetAllCategories();
-            return View();
+            //ViewData["AvailebleCategories"] = categoryService.GetAllCategories();
+            ShelterViewModel model = new ShelterViewModel();
+            model.CategoryList = AvailableCategories();
+
+
+            return View(model);
         }
 
         [HttpPost]
@@ -81,6 +85,7 @@ namespace MyShelter.Controllers
         public IActionResult CreateShelter(ShelterViewModel model)
         {
 
+            model.CategoryList = AvailableCategories();
             if (ModelState.IsValid)
             {
                 string uniqueFileName = null;
@@ -102,7 +107,7 @@ namespace MyShelter.Controllers
                     City = model.City,
                     Street = model.Street,
                     PeopleCount = model.PeopleCount,
-                    CategoryId = model.CategoryId,
+                    CategoryId = Convert.ToInt32(model.CategoryStr),
                     Category = categoryService.GetCategoryById(model.CategoryId),
                     UserId = userManager.GetUserId(User)
 
@@ -111,38 +116,33 @@ namespace MyShelter.Controllers
                 shelterService.AddNewShelter(newShelter);
                 return RedirectToAction(nameof(GetAllShelters));
             }
-            return View();
+            return View(model);
             
         }
 
 
         public IActionResult EditShelter(int Id)
         {
-            try
-            {
-                Shelter shelter = shelterService.GetShelterById(Id);
-                ShelterEditViewModel newShelterViewModel = new ShelterEditViewModel
-                {
-                    Id = shelter.id,
-                    ShelterName = shelter.ShelterName,
-                    ShelterShortDescription = shelter.ShelterShortDescription,
-                    ShelterLongDescription = shelter.ShelterLongDescription,
-                    City = shelter.City,
-                    Street = shelter.Street,
-                    PeopleCount = shelter.PeopleCount,
-                    CategoryId = shelter.CategoryId,
-                    Category = categoryService.GetCategoryById(shelter.CategoryId),
-                    ExistingImage = shelter.Image 
-                };
 
-                ViewData["AvailebleCategories"] = categoryService.GetAllCategories();
-                return View(newShelterViewModel);
-            }
-            catch
+            Shelter shelter = shelterService.GetShelterById(Id);
+            
+            ShelterEditViewModel newShelterViewModel = new ShelterEditViewModel
             {
-                return RedirectToAction(nameof(GetAllShelters));
-            }
+                Id = shelter.id,
+                ShelterName = shelter.ShelterName,
+                ShelterShortDescription = shelter.ShelterShortDescription,
+                ShelterLongDescription = shelter.ShelterLongDescription,
+                City = shelter.City,
+                Street = shelter.Street,
+                PeopleCount = shelter.PeopleCount,
+                CategoryId = shelter.CategoryId,
+                Category = categoryService.GetCategoryById(shelter.CategoryId),
+                ExistingImage = shelter.Image,
+                CategoryStr = shelter.CategoryId.ToString()
 
+            };
+            newShelterViewModel.CategoryList = AvailableCategories();
+            return View(newShelterViewModel);
         }
 
         
@@ -151,7 +151,7 @@ namespace MyShelter.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult EditShelter(ShelterEditViewModel model)
         {
-
+            model.CategoryList = AvailableCategories();
             if (ModelState.IsValid)
             {
                 Shelter shelt = shelterService.GetShelterById(model.Id);
@@ -161,7 +161,7 @@ namespace MyShelter.Controllers
                 shelt.City = model.City;
                 shelt.Street = model.Street;
                 shelt.PeopleCount = model.PeopleCount;
-                shelt.CategoryId = model.CategoryId;
+                shelt.CategoryId = Convert.ToInt32(model.CategoryStr);
                 shelt.Category = model.Category;
 
                 if (model.Image != null)
@@ -193,7 +193,7 @@ namespace MyShelter.Controllers
                 return RedirectToAction(nameof(GetAllShelters));
             }
 
-            return View();
+            return View(model);
         }
 
         public IActionResult DeleteShelter(int Id)
@@ -216,9 +216,13 @@ namespace MyShelter.Controllers
             try
             {
                 Shelter shelter = shelterService.GetShelterById(Id);
-                var ImgPath = Path.Combine(hostingEnvironment.WebRootPath, "Images", shelter.Image);
-                if (System.IO.File.Exists(ImgPath))
-                    System.IO.File.Delete(ImgPath);
+                if (shelter.Image != null)
+                {
+                    var ImgPath = Path.Combine(hostingEnvironment.WebRootPath, "Images", shelter.Image);
+                    if (System.IO.File.Exists(ImgPath))
+                        System.IO.File.Delete(ImgPath);
+                }
+                    
                 shelterService.DeleteShelter(shelter);
                 return RedirectToAction(nameof(GetAllShelters));
             }
@@ -257,6 +261,20 @@ namespace MyShelter.Controllers
                 return RedirectToAction(nameof(GetAllShelters));
             }
 
+        }
+
+        private SelectList AvailableCategories()
+        {
+            List<SelectListItem> categ = new List<SelectListItem>();
+            var categories = categoryService.GetAllCategories();
+            categ.Add(new SelectListItem { Text = "Оберіть Категорію", Value = "" });
+            foreach (var item in categories)
+            {
+                categ.Add(new SelectListItem { Text = item.name, Value = item.id.ToString() });
+            }
+
+            SelectList items = new SelectList(categ, "Value", "Text");
+            return items;
         }
 
 
