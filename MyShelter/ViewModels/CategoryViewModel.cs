@@ -11,8 +11,11 @@ namespace MyShelter.ViewModels
     public class CategoryViewModel 
     {
 
+        [Required(ErrorMessage = "Поле обов'язкове")]
         public string name { get; set; }
+        [Required(ErrorMessage = "Поле обов'язкове")]
         public string description { get; set; }
+        [Required(ErrorMessage = "Поле обов'язкове")]
         public IFormFile Image { get; set; }
         public virtual IEnumerable<Shelter> Shelters { get; set; }
 

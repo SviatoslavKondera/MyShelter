@@ -98,9 +98,11 @@ namespace LNU_Test_Portal.Controllers
 
                 
                 categoryService.AddNewCategory(newCategory);
+                return RedirectToAction(nameof(GetAllCategories));
             }
+            return View();
 
-            return RedirectToAction(nameof(GetAllCategories));
+            
         }
 
 
@@ -164,10 +166,10 @@ namespace LNU_Test_Portal.Controllers
                 }
 
                 categoryService.UpdateCategory(cat);
-
+                return RedirectToAction(nameof(GetAllCategories));
             }
 
-            return RedirectToAction(nameof(GetAllCategories));
+            return View();
         }
 
 

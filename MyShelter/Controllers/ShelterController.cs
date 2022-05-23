@@ -109,9 +109,10 @@ namespace MyShelter.Controllers
                 };
 
                 shelterService.AddNewShelter(newShelter);
+                return RedirectToAction(nameof(GetAllShelters));
             }
-
-            return RedirectToAction(nameof(GetAllShelters));
+            return View();
+            
         }
 
 
@@ -189,10 +190,10 @@ namespace MyShelter.Controllers
                 }
 
                 shelterService.Update(shelt);
-                
+                return RedirectToAction(nameof(GetAllShelters));
             }
 
-            return RedirectToAction(nameof(GetAllShelters));
+            return View();
         }
 
         public IActionResult DeleteShelter(int Id)

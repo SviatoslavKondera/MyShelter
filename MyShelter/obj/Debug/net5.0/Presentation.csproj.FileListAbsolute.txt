@@ -128,3 +128,7 @@ D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\Presentation.dll
 D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\ref\Presentation.dll
 D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\Presentation.pdb
 D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\Presentation.genruntimeconfig.cache
+D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\Antlr3.Runtime.dll
+D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\System.Web.Optimization.dll
+D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\Microsoft.Web.Infrastructure.dll
+D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\WebGrease.dll

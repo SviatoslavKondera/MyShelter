@@ -27,6 +27,7 @@
                             <div class="form-outline mb-2">
                                 <label class="form-label " style="color: #0e6ccd;" for="form3Example1cg">Назва об'єкта</label>
                                 <input style="border-width:2px;" type="text" id="form3Example1cg"  class="form-control form-control-lg" asp-for="ShelterName" />
+                                <span asp-validation-for="ShelterName" class="text-danger"></span>
                             </div>
                             <div class="form-outline mb-2">
                                 <label style="color: #0e6ccd;" class="form-label  " for="form3Example1cg">Категорія</label>
@@ -38,6 +39,7 @@
                                         
                                     }
                             </select>
+                            <span asp-validation-for="Category" class="text-danger"></span>
 
                             </div>
                            
@@ -45,25 +47,30 @@
     <div class="col">
         <label style="color: #0e6ccd;" class="form-label  " for="form3Example1cg">Місто</label>
       <input style="border-width:2px;" type="text" class="form-control" asp-for="City">
+      <span asp-validation-for="City" class="text-danger"></span>
     </div>
     <div class="col">
         <label class="form-label  " for="form3Example1cg" style="color: #0e6ccd;">Вулиця</label>
       <input style="border-width:2px;" type="text" class="form-control" asp-for="Street">
+      <span asp-validation-for="Street" class="text-danger"></span>
     </div>
   </div>
 
                             <div class="form-outline mb-2">
                                 <label style="color: #0e6ccd;" class="form-label  " for="form3Example1cg">Кількість чоловік,яких може помістити</label>
-                                <input style="border-width:2px;" type="text" id="form3Example1cg" class="form-control form-control-lg" asp-for="PeopleCount"  />
+                                <input style="border-width:2px;" type="number" id="form3Example1cg" class="form-control form-control-lg" asp-for="PeopleCount"  />
+                           
                             </div>
 
                             <div class="form-group">
                                 <label style="color: #0e6ccd;" class="form-label" for="exampleFormControlTextarea1">Короткий опис</label>
                                 <textarea style="border-width:2px;" class="form-control" id="exampleFormControlTextarea1" rows="4" asp-for="ShelterShortDescription"></textarea>
+                                <span asp-validation-for="ShelterShortDescription" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <label style="color: #0e6ccd;" class="form-label  " for="exampleFormControlTextarea1">Загальний опис</label>
                                 <textarea style="border-width:2px;" class="form-control" id="exampleFormControlTextarea1" rows="4" asp-for="ShelterLongDescription" ></textarea>
+                                <span asp-validation-for="ShelterLongDescription" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                              
