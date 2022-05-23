@@ -12,16 +12,23 @@ namespace MyShelter.ViewModels
     public class ShelterViewModel 
     {
         [Required(ErrorMessage = "Поле обов'язкове")]
+        [StringLength(140)]
         public string ShelterName { get; set; }
         [Required(ErrorMessage = "Поле обов'язкове")]
+
+
+        [StringLength(140)]
         public string ShelterShortDescription { get; set; }
         [Required(ErrorMessage = "Поле обов'язкове")]
         public string ShelterLongDescription { get; set; }
         
         public IFormFile Image { get; set; }
         [Required(ErrorMessage = "Поле обов'язкове")]
+
+        [StringLength(33)]
         public string City { get; set; }
         [Required(ErrorMessage = "Поле обов'язкове")]
+        [StringLength(33)]
         public string Street { get; set; }
         public int PeopleCount { get; set; }
        

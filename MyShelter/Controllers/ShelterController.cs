@@ -151,9 +151,10 @@ namespace MyShelter.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult EditShelter(ShelterEditViewModel model)
         {
-            model.CategoryList = AvailableCategories();
+            
             if (ModelState.IsValid)
             {
+               // model.CategoryList = AvailableCategories();
                 Shelter shelt = shelterService.GetShelterById(model.Id);
                 shelt.ShelterName = model.ShelterName;
                 shelt.ShelterShortDescription = model.ShelterShortDescription;
@@ -162,7 +163,7 @@ namespace MyShelter.Controllers
                 shelt.Street = model.Street;
                 shelt.PeopleCount = model.PeopleCount;
                 shelt.CategoryId = Convert.ToInt32(model.CategoryStr);
-                shelt.Category = model.Category;
+                shelt.Category = categoryService.GetCategoryById(Convert.ToInt32(model.CategoryStr));
 
                 if (model.Image != null)
                 {
@@ -194,6 +195,8 @@ namespace MyShelter.Controllers
             }
 
             return View(model);
+
+            
         }
 
         public IActionResult DeleteShelter(int Id)
