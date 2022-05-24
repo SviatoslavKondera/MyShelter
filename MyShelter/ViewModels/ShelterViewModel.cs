@@ -17,7 +17,7 @@ namespace MyShelter.ViewModels
         [Required(ErrorMessage = "Поле обов'язкове")]
 
 
-        [StringLength(140)]
+        [StringLength(190)]
         public string ShelterShortDescription { get; set; }
         [Required(ErrorMessage = "Поле обов'язкове")]
         public string ShelterLongDescription { get; set; }

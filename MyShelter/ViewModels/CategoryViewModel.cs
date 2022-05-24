@@ -15,7 +15,7 @@ namespace MyShelter.ViewModels
         [StringLength(70)]
         public string name { get; set; }
         [Required(ErrorMessage = "Поле обов'язкове")]
-        [StringLength(140)]
+        [StringLength(280)]
         public string description { get; set; }
         
         public IFormFile Image { get; set; }

@@ -48,7 +48,7 @@ namespace LNU_Test_Portal.Controllers
             var categories = categoryService.GetAllCategories();
             if (!String.IsNullOrEmpty(searching))
             {
-                categories = categories.Where(s => s.name.Contains(searching));
+                categories = categories.Where(s => s.name.ToLower().Contains(searching.ToLower()));
             }
 
             if (isActive == true)

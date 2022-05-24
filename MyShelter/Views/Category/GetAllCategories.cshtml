@@ -33,7 +33,8 @@
                                      <div style="margin-top:8px;">
                     
                         
-                        @Html.CheckBox("isActive", false ,new { style="width:16px;height:16px;id=a;" })
+                        @Html.CheckBox("isActive", false ,new { style="width:16px;height:16px;id=a;",onclick="this.form.submit();"})
+                        
                             <label for="a" style="font-family:Arial;font-size:17px;padding-left:4px;">Показати лише мої</label>
                         
                 </div>
@@ -65,8 +66,9 @@
             num++;
  <div class="courseDetails d-flex flex-row" style="border-width:1px;">
     <img class="ShelterFirstSqImg" src="~/Images/@cat.Image" />
+    
     <div class="d-flex flex-column"  style="">
-  <div class="p-0"><h2 class="CourseName "><b>@cat.name</b></h2></div>
+  <div class="p-0"><h2 class="CourseName" style="margin-top:4px; "><b>@cat.name</b></h2></div>
   <div class="p-1">@cat.description</div>
   <div class="d-flex flex-row">
 

@@ -52,7 +52,7 @@ namespace MyShelter.Controllers
 
             if (!String.IsNullOrEmpty(searching))
             {
-                shelters = shelters.Where(s => s.ShelterName.Contains(searching));
+                shelters = shelters.Where(s => s.ShelterName.ToLower().Contains(searching.ToLower()));
             }
             if (!String.IsNullOrEmpty(City))
             {

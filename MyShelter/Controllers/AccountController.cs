@@ -98,6 +98,8 @@ namespace MyShelter.Controllers
                     var confirmationLink = Url.Action("ConfirmSuccess", "Account",
                         new { userId = user.Id, token = token }, Request.Scheme);
 
+
+                   // string To = User.Identity.Name;
                     string To = "mylnu.service@gmail.com";
                     string Subject = "Підтвердження пошти";
                     string PartObBody = " Будь ласка підтвердіть вашу пошту, натиснувши на цю кнопку";
