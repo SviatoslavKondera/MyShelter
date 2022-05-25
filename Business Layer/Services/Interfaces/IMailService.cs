@@ -9,6 +9,6 @@ namespace BLL.Services.Interfaces
 {
     public interface IMailService
     {
-        void SendEmail(string To, string ConfirmLink, string Subject, string PartOfBody);
+        void SendEmail(string To, string ConfirmLink, string Subject, string PartOfBody, string BtnText);
     }
 }

@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "Data Access Layer\DA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation", "MyShelter\Presentation.csproj", "{18E98C46-6ACC-48C7-871E-75DCCA88250A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{14EE92F3-FE49-450D-9A08-C4FE320E6E8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{18E98C46-6ACC-48C7-871E-75DCCA88250A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18E98C46-6ACC-48C7-871E-75DCCA88250A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18E98C46-6ACC-48C7-871E-75DCCA88250A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14EE92F3-FE49-450D-9A08-C4FE320E6E8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14EE92F3-FE49-450D-9A08-C4FE320E6E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14EE92F3-FE49-450D-9A08-C4FE320E6E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14EE92F3-FE49-450D-9A08-C4FE320E6E8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

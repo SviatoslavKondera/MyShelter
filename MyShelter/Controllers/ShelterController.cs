@@ -44,6 +44,9 @@ namespace MyShelter.Controllers
             this.userManager = userManager;
         }
         
+
+        //2 факторна
+        // гугл мапс
         [AllowAnonymous]
         public IActionResult GetAllShelters(string SelectOption, string searching, string City,bool isActive)
         {
@@ -56,7 +59,7 @@ namespace MyShelter.Controllers
             }
             if (!String.IsNullOrEmpty(City))
             {
-                shelters = shelters.Where(s => s.City.Contains(City));
+                shelters = shelters.Where(s => s.City.ToLower().Contains(City.ToLower()));
             }
             if (!String.IsNullOrEmpty(SelectOption))
             {
@@ -73,10 +76,8 @@ namespace MyShelter.Controllers
 
         public IActionResult CreateShelter()
         {
-            //ViewData["AvailebleCategories"] = categoryService.GetAllCategories();
             ShelterViewModel model = new ShelterViewModel();
             model.CategoryList = AvailableCategories();
-
             logger.LogInformation("User trying to add new City Object");
             return View(model);
         }
@@ -90,7 +91,6 @@ namespace MyShelter.Controllers
             if (ModelState.IsValid)
             {
                 string uniqueFileName = null;
-
                 if (model.Image != null)
                 { 
                     string uploadsFolder = Path.Combine(hostingEnvironment.WebRootPath, "Images");
@@ -111,15 +111,13 @@ namespace MyShelter.Controllers
                     CategoryId = Convert.ToInt32(model.CategoryStr),
                     Category = categoryService.GetCategoryById(model.CategoryId),
                     UserId = userManager.GetUserId(User)
-
                 };
 
                 shelterService.AddNewShelter(newShelter);
                 return RedirectToAction(nameof(GetAllShelters));
             }
             logger.LogInformation("City Object added successfully");
-            return View(model);
-            
+            return View(model);   
         }
 
 

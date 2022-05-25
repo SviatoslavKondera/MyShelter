@@ -11,7 +11,6 @@ using BLL.Services;
 using BLL.Services.Interfaces;
 using Data_Access_Layer.Entities;
 using Microsoft.AspNetCore.Authorization;
-//using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Identity;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
@@ -55,8 +54,8 @@ namespace LNU_Test_Portal.Controllers
             {
                 categories = categories.Where(s => s.UserId==userManager.GetUserId(User));
             }
-            
-            logger.LogInformation("Showwing All Categories");
+
+            logger.LogInformation("User " + User.Identity.Name + " get all categories");
 
             return View(categories);
         }
@@ -65,7 +64,7 @@ namespace LNU_Test_Portal.Controllers
         
         public IActionResult Create()
         {
-            
+            logger.LogInformation("User " + User.Identity.Name + " trying to create new Category");
             return View();
         }
 
@@ -98,11 +97,11 @@ namespace LNU_Test_Portal.Controllers
 
                 
                 categoryService.AddNewCategory(newCategory);
+                logger.LogInformation("User " + User.Identity.Name + " created new category with id=" + newCategory.id);
                 return RedirectToAction(nameof(GetAllCategories));
             }
-            return View(model);
-
-            
+            logger.LogError("Error occurred when User " + User.Identity.Name + " created new category");
+            return View(model);    
         }
 
 
@@ -119,11 +118,13 @@ namespace LNU_Test_Portal.Controllers
                     description = category.description,
                     ExistingImage = category.Image
                 };
+                logger.LogInformation("User trying to edit City Object with Id=" + category.id);
 
                 return View(newCategoryViewModel);
             }
-            catch
+            catch(Exception ex)
             {
+                logger.LogError("Error occured when User" + User.Identity.Name +" called Edit get method.Error description: "+ex.Message);
                 return RedirectToAction(nameof(GetAllCategories));
             }
 
@@ -168,7 +169,7 @@ namespace LNU_Test_Portal.Controllers
                 categoryService.UpdateCategory(cat);
                 return RedirectToAction(nameof(GetAllCategories));
             }
-
+            logger.LogError("Error occured when User" + User.Identity.Name + " called Edit post method");
             return View(model);
         }
 
@@ -178,10 +179,12 @@ namespace LNU_Test_Portal.Controllers
             try
             {
                 Category category = categoryService.GetCategoryById(Id);
+                logger.LogInformation("User trying to delete Category with Id=" + Id);
                 return View(category);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.LogError("Error has occurred when user :" + User.Identity.Name + " trying to delete get method Category with Id=" + Id + " Error description:" + ex.Message);
                 return RedirectToAction(nameof(GetAllCategories));
             }
         }
@@ -200,6 +203,7 @@ namespace LNU_Test_Portal.Controllers
             }
             
             categoryService.DeleteCategory(category);
+            logger.LogInformation("User "+User.Identity.Name +" delete Category with Id=" + Id + " successfully");
             return RedirectToAction(nameof(GetAllCategories));
             
         }

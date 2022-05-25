@@ -33,6 +33,7 @@ namespace MyShelter.Controllers
         public IActionResult Login()
         {
             return View();
+            
         }
 
         [HttpPost]
@@ -103,7 +104,8 @@ namespace MyShelter.Controllers
                     string To = "mylnu.service@gmail.com";
                     string Subject = "Підтвердження пошти";
                     string PartObBody = " Будь ласка підтвердіть вашу пошту, натиснувши на цю кнопку";
-                    mailService.SendEmail(To, confirmationLink, Subject, PartObBody);
+                    string BtnTxt = "Підтвердити пошту";
+                    mailService.SendEmail(To, confirmationLink, Subject, PartObBody,BtnTxt);
 
                     if (!roleManager.RoleExistsAsync("SimpleUser").Result)
                     {
@@ -173,10 +175,12 @@ namespace MyShelter.Controllers
                             new { email = model.Email, token = token }, Request.Scheme);
 
 
-                    string To = user.Email;
-                    string Subject = "Reset Password";
-                    string PartObBody = " To Reset your password, please click button.";
-                    mailService.SendEmail(To, passwordResetLink, Subject, PartObBody);
+                    // string To = User.Identity.Name;
+                    string To = "mylnu.service@gmail.com";
+                    string Subject = "Зміна паролю";
+                    string PartObBody = " Щоб змінити пароль, натисніть на кнопку";
+                    string BtnText = "Змінити пароль";
+                    mailService.SendEmail(To, passwordResetLink, Subject, PartObBody,BtnText);
 
 
                     return View("ForgotPasswordConfirmation");
