@@ -56,7 +56,7 @@ namespace LNU_Test_Portal.Controllers
                 categories = categories.Where(s => s.UserId==userManager.GetUserId(User));
             }
             
-            logger.LogInformation("Show all categories");
+            logger.LogInformation("Showwing All Categories");
 
             return View(categories);
         }

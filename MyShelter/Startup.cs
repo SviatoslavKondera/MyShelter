@@ -17,6 +17,7 @@ using Data_Access_Layer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.Extensions.Logging;
 
 namespace MyShelter
 {
@@ -31,6 +32,10 @@ namespace MyShelter
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLogging(loggingBuilder =>
+            {
+                loggingBuilder.AddSeq();
+            });
             services.AddControllersWithViews();
 
             services.AddMvc(config =>

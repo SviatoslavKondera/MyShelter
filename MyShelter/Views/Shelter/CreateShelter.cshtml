@@ -27,14 +27,15 @@
                                 <label class="form-label " style="color: #0e6ccd;" for="form3Example1cg">Назва об'єкта</label>
                                 <input style="border-width:2px;" type="text" id="form3Example1cg"  class="form-control form-control-lg" asp-for="ShelterName" />
                                 <span asp-validation-for="ShelterName" class="text-danger"></span>
-                            </div>
-                            <div class="form-outline mb-2">
+                                <div class="form-outline mb-2">
                                 <label style="color: #0e6ccd;" class="form-label  " for="form3Example1cg">Категорія</label>
                                 <select id="ddlCountries" name="CategoryStr" asp-items="@Model.CategoryList" class="form-control"></select>
                                 <span asp-validation-for="CategoryStr" class="text-danger"></span>
                             
 
                             </div>
+                            </div>
+                            
                            
                              <div class="form-row ">
     <div class="col">

@@ -23,7 +23,7 @@ namespace MyShelter
 
             try
             {
-                Log.Information("Starting web host ---");
+                Log.Information("Starting web host )))---");
                 CreateHostBuilder(args).Build().Run();
                 Console.ReadKey(true);
                 return 0;
@@ -48,7 +48,7 @@ namespace MyShelter
                 .ConfigureWebHostDefaults(webBuilder =>
 
                 {
-                    webBuilder.UseStartup<Startup>().UseSerilog();
+                    webBuilder.UseStartup<Startup>();
                 });
     }
 }

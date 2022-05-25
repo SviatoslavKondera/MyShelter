@@ -75,6 +75,18 @@
             "Microsoft.Owin.Host.SystemWeb": {
               "target": "Package",
               "version": "[4.2.1, )"
+            },
+            "Seq.Extensions.Logging": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Serilog.Sinks.Seq": {
+              "target": "Package",
+              "version": "[5.1.1, )"
             }
           },
           "imports": [
@@ -191,6 +203,18 @@
             "Microsoft.Owin.Host.SystemWeb": {
               "target": "Package",
               "version": "[4.2.1, )"
+            },
+            "Seq.Extensions.Logging": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Serilog.Sinks.Seq": {
+              "target": "Package",
+              "version": "[5.1.1, )"
             },
             "popper.js": {
               "target": "Package",

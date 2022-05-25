@@ -1,0 +1,15 @@
+D:\My Visual Studio proj\MyShelter\Data Access Layer\bin\Release\net5.0\DAL.deps.json
+D:\My Visual Studio proj\MyShelter\Data Access Layer\bin\Release\net5.0\DAL.runtimeconfig.json
+D:\My Visual Studio proj\MyShelter\Data Access Layer\bin\Release\net5.0\DAL.runtimeconfig.dev.json
+D:\My Visual Studio proj\MyShelter\Data Access Layer\bin\Release\net5.0\DAL.dll
+D:\My Visual Studio proj\MyShelter\Data Access Layer\bin\Release\net5.0\ref\DAL.dll
+D:\My Visual Studio proj\MyShelter\Data Access Layer\bin\Release\net5.0\DAL.pdb
+D:\My Visual Studio proj\MyShelter\Data Access Layer\obj\Release\net5.0\DAL.csproj.AssemblyReference.cache
+D:\My Visual Studio proj\MyShelter\Data Access Layer\obj\Release\net5.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Visual Studio proj\MyShelter\Data Access Layer\obj\Release\net5.0\DAL.AssemblyInfoInputs.cache
+D:\My Visual Studio proj\MyShelter\Data Access Layer\obj\Release\net5.0\DAL.AssemblyInfo.cs
+D:\My Visual Studio proj\MyShelter\Data Access Layer\obj\Release\net5.0\DAL.csproj.CoreCompileInputs.cache
+D:\My Visual Studio proj\MyShelter\Data Access Layer\obj\Release\net5.0\DAL.dll
+D:\My Visual Studio proj\MyShelter\Data Access Layer\obj\Release\net5.0\ref\DAL.dll
+D:\My Visual Studio proj\MyShelter\Data Access Layer\obj\Release\net5.0\DAL.pdb
+D:\My Visual Studio proj\MyShelter\Data Access Layer\obj\Release\net5.0\DAL.genruntimeconfig.cache
