@@ -135,3 +135,5 @@ D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\WebGrease.dll
 D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\Serilog.Sinks.PeriodicBatching.dll
 D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\Serilog.Sinks.Seq.dll
 D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\Seq.Extensions.Logging.dll
+D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\Serilog.Enrichers.Context.dll
+D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\Serilog.Enrichers.Environment.dll

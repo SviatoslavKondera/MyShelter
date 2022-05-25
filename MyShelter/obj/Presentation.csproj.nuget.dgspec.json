@@ -341,6 +341,14 @@
               "target": "Package",
               "version": "[5.0.0, )"
             },
+            "Serilog.Enrichers.Context": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            },
+            "Serilog.Enrichers.Environment": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Serilog.Sinks.Console": {
               "target": "Package",
               "version": "[4.0.1, )"

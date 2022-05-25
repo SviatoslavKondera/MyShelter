@@ -67,6 +67,7 @@ namespace MyShelter.Controllers
                 shelters = shelters.Where(s => s.UserId == userManager.GetUserId(User));
             }
 
+            logger.LogInformation("Getting All City Objects");
             return View(shelters.ToList());
         }
 
@@ -76,7 +77,7 @@ namespace MyShelter.Controllers
             ShelterViewModel model = new ShelterViewModel();
             model.CategoryList = AvailableCategories();
 
-
+            logger.LogInformation("User trying to add new City Object");
             return View(model);
         }
 
@@ -116,6 +117,7 @@ namespace MyShelter.Controllers
                 shelterService.AddNewShelter(newShelter);
                 return RedirectToAction(nameof(GetAllShelters));
             }
+            logger.LogInformation("City Object added successfully");
             return View(model);
             
         }
@@ -142,6 +144,7 @@ namespace MyShelter.Controllers
 
             };
             newShelterViewModel.CategoryList = AvailableCategories();
+            logger.LogInformation("User trying to edit City Object with Id="+shelter.id);
             return View(newShelterViewModel);
         }
 
@@ -191,7 +194,9 @@ namespace MyShelter.Controllers
                 }
 
                 shelterService.Update(shelt);
+                logger.LogInformation("User edit City Object with Id=" + shelt.id+"successfully.");
                 return RedirectToAction(nameof(GetAllShelters));
+
             }
 
             return View(model);
@@ -204,10 +209,12 @@ namespace MyShelter.Controllers
             try
             {
                 Shelter shelter = shelterService.GetShelterById(Id);
+                logger.LogInformation("User trying to delete City Object with Id=" + Id);
                 return View(shelter);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.LogError("Error has occurred when user :" + User.Identity.Name + " trying to delete get City Object with Id=" + Id + " Error description:" + ex.Message);
                 return RedirectToAction(nameof(GetAllShelters));
             }
         }
@@ -227,10 +234,12 @@ namespace MyShelter.Controllers
                 }
                     
                 shelterService.DeleteShelter(shelter);
+                logger.LogInformation("User delete City Object with Id=" + Id + " successfully");
                 return RedirectToAction(nameof(GetAllShelters));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.LogError("Error has occurred when user :" + User.Identity.Name + " trying to delete get City Object with Id=" + Id + " Error description:" + ex.Message);
                 return RedirectToAction(nameof(GetAllShelters));
             }
         }
@@ -257,10 +266,12 @@ namespace MyShelter.Controllers
                 };
 
                 ViewData["AvailebleCategories"] = categoryService.GetAllCategories();
+                logger.LogInformation("User " + User.Identity.Name + " get details for City Object with Id=" + Id + " successfully");
                 return View(newShelterViewModel);
             }
-            catch
+            catch(Exception ex)
             {
+                logger.LogError("Error has occurred when user :" + User.Identity.Name + " trying to get details for City Object with Id=" + Id + " Error description:" + ex.Message);
                 return RedirectToAction(nameof(GetAllShelters));
             }
 

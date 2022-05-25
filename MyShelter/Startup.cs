@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace MyShelter
 {
@@ -32,10 +33,7 @@ namespace MyShelter
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddLogging(loggingBuilder =>
-            {
-                loggingBuilder.AddSeq();
-            });
+            
             services.AddControllersWithViews();
 
             services.AddMvc(config =>
@@ -100,6 +98,7 @@ namespace MyShelter
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSerilogRequestLogging();
             app.UseRouting();
 
 
