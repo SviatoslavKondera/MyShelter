@@ -9,6 +9,42 @@
     <title>@ViewData["Title"] - Моніторинг</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1gRfrbVI20cLW1Fc8u6rgoq2Yi5z_LJk&callback=initAutocomplete&libraries=places&v=weekly" type="text/javascript"></script>  
+
+
+     @*<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1gRfrbVI20cLW1Fc8u6rgoq2Yi5z_LJk&callback=initAutocomplete&libraries=places&v=weekly"
+      defer
+    ></script>*@
+  @*  <script type="text/javascript">  
+        var mapcode;  
+        var diag;  
+        function initialize() {  
+            mapcode = new google.maps.Geocoder();  
+            var lnt = new google.maps.LatLng(26.45, 82.85);  
+            var diagChoice = {  
+                zoom: 9,  
+                center: lnt,  
+                diagId: google.maps.MapTypeId.ROADMAP  
+            }  
+            diag = new google.maps.Map(document.getElementById('map_populate'), diagChoice);  
+        }  
+        function getmap() {  
+            var completeaddress = document.getElementById('txt_location').value;  
+            mapcode.geocode({ 'address': "Lviv, Ukraine" }, function (results, status) {  
+                if (status == google.maps.GeocoderStatus.OK) {  
+                    diag.setCenter(results[0].geometry.location);  
+                    var hint = new google.maps.Marker({  
+                        diag: diag,  
+                        position: results[0].geometry.location  
+                    });  
+                } else {  
+                    alert('Location Not Tracked. ' + status);  
+                }  
+            });  
+        }  
+        google.maps.event.addDomListener(window, 'load', initialize);  
+    </script>*@
   
 </head>
 <body>

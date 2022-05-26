@@ -188,6 +188,8 @@ namespace Data_Access_Layer.Migrations
                     Street = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PeopleCount = table.Column<int>(type: "int", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
+                    Longitude = table.Column<decimal>(type: "decimal(18,6)", nullable: false),
+                    Latitude = table.Column<decimal>(type: "decimal(18,6)", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>

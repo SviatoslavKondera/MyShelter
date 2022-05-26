@@ -41,6 +41,10 @@ namespace MyShelter.ViewModels
         [Required(ErrorMessage = "Поле обов'язкове")]
         public string CategoryStr { get; set; }
 
+        [Required(ErrorMessage = "Поле обов'язкове")]
+        public decimal Longitude { get; set; }
+        [Required(ErrorMessage = "Поле обов'язкове")]
+        public decimal Latitude { get; set; }
 
 
         public virtual ApplicationUser User { get; set; }

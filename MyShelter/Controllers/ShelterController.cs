@@ -110,7 +110,9 @@ namespace MyShelter.Controllers
                     PeopleCount = model.PeopleCount,
                     CategoryId = Convert.ToInt32(model.CategoryStr),
                     Category = categoryService.GetCategoryById(model.CategoryId),
-                    UserId = userManager.GetUserId(User)
+                    UserId = userManager.GetUserId(User),
+                    Longitude = model.Longitude,
+                    Latitude = model.Latitude
                 };
 
                 shelterService.AddNewShelter(newShelter);
@@ -138,7 +140,9 @@ namespace MyShelter.Controllers
                 CategoryId = shelter.CategoryId,
                 Category = categoryService.GetCategoryById(shelter.CategoryId),
                 ExistingImage = shelter.Image,
-                CategoryStr = shelter.CategoryId.ToString()
+                CategoryStr = shelter.CategoryId.ToString(),
+                Latitude = shelter.Latitude,
+                Longitude = shelter.Longitude
 
             };
             newShelterViewModel.CategoryList = AvailableCategories();
@@ -155,7 +159,6 @@ namespace MyShelter.Controllers
             
             if (ModelState.IsValid)
             {
-               // model.CategoryList = AvailableCategories();
                 Shelter shelt = shelterService.GetShelterById(model.Id);
                 shelt.ShelterName = model.ShelterName;
                 shelt.ShelterShortDescription = model.ShelterShortDescription;
@@ -165,6 +168,8 @@ namespace MyShelter.Controllers
                 shelt.PeopleCount = model.PeopleCount;
                 shelt.CategoryId = Convert.ToInt32(model.CategoryStr);
                 shelt.Category = categoryService.GetCategoryById(Convert.ToInt32(model.CategoryStr));
+                shelt.Longitude = model.Longitude;
+                shelt.Latitude = model.Latitude;
 
                 if (model.Image != null)
                 {
@@ -260,7 +265,9 @@ namespace MyShelter.Controllers
                     PeopleCount = shelter.PeopleCount,
                     CategoryId = shelter.CategoryId,
                     Category = categoryService.GetCategoryById(shelter.CategoryId),
-                    ExistingImage = shelter.Image
+                    ExistingImage = shelter.Image,
+                    Latitude = shelter.Latitude,
+                    Longitude = shelter.Longitude
                 };
 
                 ViewData["AvailebleCategories"] = categoryService.GetAllCategories();

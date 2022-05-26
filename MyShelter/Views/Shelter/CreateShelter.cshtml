@@ -16,65 +16,73 @@
 <div class="mask d-flex align-items-center h-100 gradient-custom-3">
     <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="myClass" style="width:85%;">
                 <div class="LogInForm card"  style="border-radius: 15px; border-width:2px;border-color:#0e6ccd;">
                     <div class="card-body p-5">
                         <h2 class="text-uppercase text-center mb-4" style="color: #0e6ccd;">Додати об'єкт міста</h2>
 
                         <form enctype="multipart/form-data" method="post" asp-controller="Shelter" asp-action="CreateShelter">
                             @Html.AntiForgeryToken()
-                            <div class="form-outline mb-2">
-                                <label class="form-label " style="color: #0e6ccd;" for="form3Example1cg">Назва об'єкта</label>
-                                <input style="border-width:2px;" type="text" id="form3Example1cg"  class="form-control form-control-lg" asp-for="ShelterName" />
-                                <span asp-validation-for="ShelterName" class="text-danger"></span>
-                                <div class="form-outline mb-2">
-                                <label style="color: #0e6ccd;" class="form-label  " for="form3Example1cg">Категорія</label>
-                                <select id="ddlCountries" name="CategoryStr" asp-items="@Model.CategoryList" class="form-control"></select>
-                                <span asp-validation-for="CategoryStr" class="text-danger"></span>
-                            
-
-                            </div>
-                            </div>
-                            
-                           
+                              <div class="form-row ">
+                                <div class="col">
+                                  <label style="color: #0e6ccd;" class="form-label  " for="form3Example1cg">Назва об'єкта</label>
+                                  <input style="border-width:2px;" type="text" class="form-control" asp-for="ShelterName">
+                                  <span asp-validation-for="ShelterName" class="text-danger"></span>
+                                </div>
+                                <div class="col">
+                                  <label style="color: #0e6ccd;" class="form-label  " for="form3Example1cg">Категорія</label>
+                                  <select id="ddlCountries" name="CategoryStr" asp-items="@Model.CategoryList" class="form-control"></select>
+                                  <span asp-validation-for="CategoryStr" class="text-danger"></span>
+                                </div>
+                              </div>
                              <div class="form-row ">
-    <div class="col">
-        <label style="color: #0e6ccd;" class="form-label  " for="form3Example1cg">Місто</label>
-      <input style="border-width:2px;" type="text" class="form-control" asp-for="City">
-      <span asp-validation-for="City" class="text-danger"></span>
-    </div>
-    <div class="col">
-        <label class="form-label  " for="form3Example1cg" style="color: #0e6ccd;">Вулиця</label>
-      <input style="border-width:2px;" type="text" class="form-control" asp-for="Street">
-      <span asp-validation-for="Street" class="text-danger"></span>
-    </div>
-  </div>
+                               <div class="col">
+                                 <label style="color: #0e6ccd;" class="form-label  " for="form3Example1cg">Місто</label>
+                                 <input style="border-width:2px;" type="text" class="form-control" asp-for="City">
+                                 <span asp-validation-for="City" class="text-danger"></span>
+                               </div>
+                               <div class="col">
+                                 <label class="form-label  " for="form3Example1cg" style="color: #0e6ccd;">Вулиця</label>
+                                 <input style="border-width:2px;" type="text" class="form-control" asp-for="Street">
+                                 <span asp-validation-for="Street" class="text-danger"></span>
+                                </div>
+                                <div class="col">
+                                  <label style="color: #0e6ccd;" class="form-label " for="form3Example1cg">Довгота</label>
+                                  <input style="border-width:2px;" type="text" class="form-control"  asp-for="Longitude">
+                                  <span asp-for="Longitude" class="text-danger"></span>
+                                </div>
+                                <div class="col">
+                                  <label style="color: #0e6ccd;" class="form-label " for="form3Example1cg">Широта</label>
+                                    <input style="border-width:2px;" type="text" class="form-control" asp-for="Latitude" >
+                                    <span asp-for="Latitude" class="text-danger"></span>
+                                 </div>
+                               </div>
+                               <div class="form-row ">
+                                 <div class="col">
+                                   <label style="color: #0e6ccd;" class="form-label" for="exampleFormControlTextarea1">Короткий опис</label>
+                                   <textarea style="border-width:2px;" class="form-control" id="exampleFormControlTextarea1" rows="4" asp-for="ShelterShortDescription"></textarea>
+                                   <span asp-validation-for="ShelterShortDescription" class="text-danger"></span>
+                                 </div>
+                                 <div class="col">
+                                   <label style="color: #0e6ccd;" class="form-label " for="exampleFormControlTextarea1">Загальний опис</label>
+                                   <textarea style="border-width:2px;" class="form-control" id="exampleFormControlTextarea1" rows="4" asp-for="ShelterLongDescription" ></textarea>
+                                   <span asp-validation-for="ShelterLongDescription" class="text-danger"></span>
+                                 </div>
+                                </div>
+                                <div class="form-row ">
+                                   <div class="col">
+                                      <label style="color: #0e6ccd;" class="form-label  " for="form3Example1cg">Кількість чоловік,яких може помістити</label>
+                                      <input style="border-width:2px;" type="number" id="form3Example1cg" class="form-control form-control-lg" asp-for="PeopleCount"  />
+                                   </div>
+                                   <div class="col">
+                                       <label class="form-label  " for="customFile" style="color: #0e6ccd;">Виберіть світлину</label>
+                                        <input style="border-width:2px;" type="file" id="form3Example1cg" class="form-control form-control-lg" asp-for="Image" />
 
-                            <div class="form-outline mb-2">
-                                <label style="color: #0e6ccd;" class="form-label  " for="form3Example1cg">Кількість чоловік,яких може помістити</label>
-                                <input style="border-width:2px;" type="number" id="form3Example1cg" class="form-control form-control-lg" asp-for="PeopleCount"  />
-                            </div>
+                                       <span asp-validation-for="Image" class="text-danger"></span>
+                                   </div>
+                                 </div>
 
-                            <div class="form-group">
-                                <label style="color: #0e6ccd;" class="form-label" for="exampleFormControlTextarea1">Короткий опис</label>
-                                <textarea style="border-width:2px;" class="form-control" id="exampleFormControlTextarea1" rows="4" asp-for="ShelterShortDescription"></textarea>
-                                <span asp-validation-for="ShelterShortDescription" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <label style="color: #0e6ccd;" class="form-label  " for="exampleFormControlTextarea1">Загальний опис</label>
-                                <textarea style="border-width:2px;" class="form-control" id="exampleFormControlTextarea1" rows="4" asp-for="ShelterLongDescription" ></textarea>
-                                <span asp-validation-for="ShelterLongDescription" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label  " for="customFile" style="color: #0e6ccd;">Виберіть світлину</label>
-                                <input style="border-width:2px;" type="file" class="form-control" id="customFile"  asp-for="Image" />
-                                <span asp-validation-for="Image" class="text-danger"></span>
-                            </div>
-                            
-
-     
-
-                            <div class="d-flex justify-content-end">
+                            <div class="d-flex justify-content-end" style="margin-top:14px;">
                                 <a class="btn btn-primary " style="background-color: white; color:#0e6ccd;" asp-controller="Shelter" asp-action="GetAllShelters">Скасувати</a>
                                 <input type="submit" class="btn btn-primary text-white" style="margin-left:10px;" name="save" value="Зберегти" />
                             </div>

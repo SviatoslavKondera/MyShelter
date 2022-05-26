@@ -127,6 +127,12 @@ namespace Data_Access_Layer.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal>("Latitude")
+                        .HasColumnType("decimal(18,6)");
+
+                    b.Property<decimal>("Longitude")
+                        .HasColumnType("decimal(18,6)");
+
                     b.Property<int>("PeopleCount")
                         .HasColumnType("int");
 

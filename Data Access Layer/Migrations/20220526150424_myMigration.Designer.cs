@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data_Access_Layer.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220524133204_myMigration")]
+    [Migration("20220526150424_myMigration")]
     partial class myMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -128,6 +128,12 @@ namespace Data_Access_Layer.Migrations
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Latitude")
+                        .HasColumnType("decimal(18,6)");
+
+                    b.Property<decimal>("Longitude")
+                        .HasColumnType("decimal(18,6)");
 
                     b.Property<int>("PeopleCount")
                         .HasColumnType("int");

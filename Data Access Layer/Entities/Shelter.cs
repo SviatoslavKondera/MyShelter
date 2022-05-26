@@ -26,6 +26,11 @@ namespace Data_Access_Layer.Entities
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
 
+        [Column(TypeName = "decimal(18, 6)")]
+        public decimal Longitude { get; set; }
+        [Column(TypeName = "decimal(18, 6)")]
+        public decimal Latitude { get; set; }
+
         public string UserId { get; set; }
         public virtual ApplicationUser User { get; set; }
     }

@@ -44,7 +44,9 @@ namespace BLL.Services
                 PeopleCount = x.PeopleCount,
                 CategoryId = categoryRepository.SelectOneById(x.CategoryId).id,
                 Category = categoryRepository.SelectOneById(x.CategoryId),
-                UserId = x.UserId
+                UserId = x.UserId,
+                Latitude = x.Latitude,
+                Longitude = x.Longitude
                 
             }) ;
         }
