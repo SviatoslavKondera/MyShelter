@@ -47,5 +47,23 @@ namespace BLL.Services
             smtp.Send(mm);
         }
 
+        public void TwoFactorEmail(string To, string token, string Subject)
+        {
+            MailMessage mm = new MailMessage(From, To);
+            mm.Subject = Subject;
+            mm.Body = "Привіт, " + To + " . Це команда Моніторингу Об'єктів міста. Для входу в систему введіть код :"+token;
+
+            mm.IsBodyHtml = true;
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = Host;
+            smtp.Port = Port;
+            smtp.EnableSsl = true;
+
+            NetworkCredential nc = new NetworkCredential(From, Password);
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = nc;
+            smtp.Send(mm);
+        }
+
     }
 }

@@ -1,0 +1,34 @@
+@using MyShelter.ViewModels
+@model TwoFactor
+@{
+    ViewData["Title"] = "Login Two Step";
+    Layout = "_Layout";
+}
+ 
+
+<div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                <div class="LogInForm card"  style="border-radius: 15px; border-width:2px;border-color:#0e6ccd;">
+                    <div class="card-body p-5">
+                        <h2 class="text-uppercase text-center mb-4" style="color: #0e6ccd;">Підтвердження Входу</h2>
+                        <form method="post">
+                            <input asp-for="RememberMe" type="hidden" />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label style="color: #0e6ccd;">Код підтвердження, що прийшов на Вашу пошту</label>
+                <input asp-for="TwoFactorCode"class="form-control form-control-lg" />
+                <span asp-validation-for="TwoFactorCode" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex justify-content-center form-outline mb-4">
+            <button type="submit" class="LogInButton btn btn-primary " style="background-color: #0e6ccd; color: #ffffff;margin-top:10px;width:100%;">Увійти</button>
+            </div>                         
+        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

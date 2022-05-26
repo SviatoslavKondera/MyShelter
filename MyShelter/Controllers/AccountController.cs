@@ -61,10 +61,63 @@ namespace MyShelter.Controllers
                         return RedirectToAction("GetAllShelters", "Shelter");
                     }
                 }
+
+                if (result.RequiresTwoFactor)// add
+                {
+                    return RedirectToAction("LoginTwoStep", new { user.Email, returnUrl, model.RememberMe });
+                }
+
                 ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
             }
             return View(model);
         }
+
+        [AllowAnonymous]
+        public async Task<IActionResult> LoginTwoStep(string email, string returnUrl, bool RememberMe )
+        {
+            var user = await userManager.FindByEmailAsync(email);
+
+            var token = await userManager.GenerateTwoFactorTokenAsync(user, "Email");
+
+
+            //string To = user.Email;
+            string To = "mylnu.service@gmail.com";
+            string Subject = "Підтвердження входу";
+
+            mailService.TwoFactorEmail(To, token, Subject);
+
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> LoginTwoStep(TwoFactor twoFactor, string returnUrl)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(twoFactor.TwoFactorCode);
+            }
+
+            var result = await signInManager.TwoFactorSignInAsync("Email", twoFactor.TwoFactorCode, twoFactor.RememberMe, false);
+            if (result.Succeeded)
+            {
+                if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                {
+                    return Redirect(returnUrl);
+                }
+                else
+                {
+                    return RedirectToAction("GetAllShelters", "Shelter");
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "Invalid Login Attempt");
+                return View();
+            }
+        }
+
+
 
         [HttpPost]
         public async Task<IActionResult> Logout()
@@ -92,7 +145,10 @@ namespace MyShelter.Controllers
                     Email = model.Email
                 };
 
+                user.TwoFactorEnabled = true;// add 
                 var result = await userManager.CreateAsync(user, model.Password);
+
+
                 if (result.Succeeded)
                 {
                     var token = await userManager.GenerateEmailConfirmationTokenAsync(user);

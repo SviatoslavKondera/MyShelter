@@ -58,6 +58,7 @@ namespace MyShelter
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
                 options.SignIn.RequireConfirmedEmail = true;
+               
 
             })
         .AddEntityFrameworkStores<DataContext>().AddDefaultTokenProviders();

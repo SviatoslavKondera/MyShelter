@@ -139,3 +139,4 @@ D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\Serilog.Enrichers.
 D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\Serilog.Enrichers.Environment.dll
 D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\Castle.Core.dll
 D:\My Visual Studio proj\MyShelter\MyShelter\bin\Debug\net5.0\Moq.dll
+D:\My Visual Studio proj\MyShelter\MyShelter\obj\Debug\net5.0\Razor\Views\Account\LoginTwoStep.cshtml.g.cs
